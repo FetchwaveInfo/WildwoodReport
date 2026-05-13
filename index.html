@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BULL Biltong — Marketing Proposal 2024</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0c0b09;--deep:#131210;--coal:#1a1916;--ash:#222019;--dust:#2a2825;
+  --gold:#c8a84b;--gold-lo:#7a6528;--gold-hi:#e4c878;
+  --bone:#e6dece;--mist:#a09888;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--bone);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+
+#progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width 0.1s}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1.1rem 2.5rem;
+  background:rgba(12,11,9,0.96);
+  border-bottom:1px solid rgba(200,168,75,0.12);
+}
+.nav-brand{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase}
+.nav-brand span{color:var(--mist);margin:0 0.5rem}
+.nav-pills{display:flex;gap:0.3rem}
+.nav-pill{
+  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
+  padding:0.35rem 0.75rem;background:transparent;border:1px solid transparent;
+  color:var(--mist);cursor:pointer;text-decoration:none;transition:all 0.2s;border-radius:2px;
+}
+.nav-pill:hover{border-color:rgba(200,168,75,0.3);color:var(--gold-hi)}
+@media(max-width:680px){.nav-pills{display:none}nav{padding:1rem 1.4rem}}
+
+/* COVER */
+.cover{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
+  padding:8rem 2.5rem 3.5rem;position:relative;
+  border-bottom:1px solid rgba(200,168,75,0.15);overflow:hidden;
+}
+.cover-glow{
+  position:absolute;top:-10%;right:-5%;width:55vw;height:70vh;
+  background:radial-gradient(ellipse at center,rgba(200,168,75,0.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cover-tag{
+  font-family:var(--mono);font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:0.8rem;margin-bottom:3rem;
+  opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;
+}
+.cover-tag::before{content:'';width:2rem;height:1px;background:var(--gold)}
+.cover-h1{
+  font-family:var(--serif);font-size:clamp(3rem,9vw,7rem);
+  font-weight:700;line-height:0.9;letter-spacing:-0.02em;color:var(--bone);
+  opacity:0;animation:fadeUp 0.9s 0.4s ease forwards;
+}
+.cover-h1 em{font-style:italic;color:var(--gold)}
+.cover-sub{
+  max-width:34rem;margin-top:2.5rem;font-size:clamp(0.85rem,1.8vw,0.97rem);
+  color:var(--mist);line-height:1.85;
+  opacity:0;animation:fadeUp 0.9s 0.7s ease forwards;
+}
+.cover-meta{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:1.5rem;padding-top:4rem;
+  opacity:0;animation:fadeIn 1s 1.1s ease forwards;
+}
+.cover-meta-item label{
+  display:block;font-family:var(--mono);font-size:0.58rem;
+  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.3rem;
+}
+.cover-meta-item p{font-family:var(--mono);font-size:0.74rem;color:var(--bone);letter-spacing:0.04em}
+.cover-retainer{
+  font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.9rem);
+  font-weight:700;color:var(--gold);
+  border:1px solid rgba(200,168,75,0.35);padding:0.7rem 1.4rem;
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* SHARED SECTION */
+.section{padding:5.5rem 2.5rem;border-bottom:1px solid rgba(200,168,75,0.1)}
+.si{max-width:68rem;margin:0 auto}
+.sl{
+  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--gold);display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem;
+}
+.sl::after{content:'';flex:1;height:1px;background:rgba(200,168,75,0.2);max-width:4rem}
+.sh{
+  font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.6rem);
+  font-weight:700;line-height:1.02;color:var(--bone);margin-bottom:1.8rem;
+}
+.sh em{font-style:italic;color:var(--gold)}
+.sb{font-size:0.9rem;line-height:1.85;color:var(--mist);max-width:46rem}
+.sb+.sb{margin-top:0.9rem}
+
+/* VALUE PROP */
+.vp{background:var(--coal)}
+.vp-stmt{
+  font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem);
+  font-weight:600;line-height:1.4;color:var(--bone);
+  max-width:52rem;border-left:3px solid var(--gold);padding-left:2rem;
+}
+.vp-stmt strong{color:var(--gold);font-weight:700}
+
+/* INCLUDED */
+.inc{background:var(--deep)}
+.inc-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1px;background:rgba(200,168,75,0.1);
+  border:1px solid rgba(200,168,75,0.1);margin-top:3rem;
+}
+.inc-item{background:var(--deep);padding:2rem 1.7rem;transition:background 0.25s}
+.inc-item:hover{background:rgba(200,168,75,0.04)}
+.inc-n{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.3em;color:var(--gold-lo);margin-bottom:0.9rem;display:block}
+.inc-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--bone);margin-bottom:0.5rem;line-height:1.2}
+.inc-body{font-size:0.82rem;line-height:1.7;color:var(--mist)}
+.inc-tag{
+  display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:0.56rem;
+  letter-spacing:0.2em;text-transform:uppercase;padding:0.22rem 0.55rem;
+  background:rgba(200,168,75,0.1);color:var(--gold);border-radius:2px;
+}
+
+/* BUDGET */
+.bud{background:var(--ash)}
+.bud-table{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:0.86rem}
+.bud-table th{
+  font-family:var(--mono);font-size:0.57rem;letter-spacing:0.22em;text-transform:uppercase;
+  color:var(--gold-lo);padding:0.75rem 1rem;text-align:left;
+  border-bottom:1px solid rgba(200,168,75,0.2);
+}
+.bud-table td{padding:1rem;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;line-height:1.5}
+.bud-table tr:hover td{background:rgba(200,168,75,0.03)}
+.bud-table .tn{color:var(--bone)}
+.bud-table .tc{font-family:var(--mono);color:var(--gold);white-space:nowrap;font-size:0.83rem}
+.bud-table .td{color:var(--mist);font-size:0.8rem}
+.bud-table .hi td{background:rgba(200,168,75,0.07)}
+.bud-table .hi .tc{color:var(--gold-hi);font-size:0.93rem;font-weight:500}
+.bud-callout{
+  margin-top:2.5rem;padding:1.7rem 2rem;
+  background:rgba(200,168,75,0.05);border:1px solid rgba(200,168,75,0.22);
+  display:flex;gap:1.8rem;align-items:flex-start;flex-wrap:wrap;
+}
+.bud-callout-icon{font-family:var(--serif);font-size:2.2rem;color:var(--gold);line-height:1;flex-shrink:0}
+.bud-callout h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.4rem}
+.bud-callout p{font-size:0.83rem;line-height:1.7;color:var(--mist)}
+.bud-callout strong{color:var(--gold-hi)}
+
+/* CONTENT */
+.cnt{background:var(--deep)}
+.tone-block{
+  margin-top:3rem;padding:1.8rem 2rem;
+  border:1px solid rgba(200,168,75,0.18);background:rgba(200,168,75,0.03);
+}
+.tone-block h4{
+  font-family:var(--mono);font-size:0.57rem;letter-spacing:0.28em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:1rem;
+}
+.tone-tags{display:flex;flex-wrap:wrap;gap:0.45rem}
+.tone-tag{
+  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;
+  padding:0.28rem 0.75rem;border:1px solid rgba(200,168,75,0.18);
+  color:var(--bone);border-radius:2px;
+}
+.pillars{margin-top:3rem;display:flex;flex-direction:column;gap:0}
+.pr{
+  display:grid;grid-template-columns:2.8rem 1fr 1fr;gap:2rem;
+  padding:1.8rem 0;border-bottom:1px solid rgba(200,168,75,0.1);align-items:start;
+}
+@media(max-width:580px){.pr{grid-template-columns:2.2rem 1fr;gap:1rem}.pr-hooks{display:none}}
+.pr-n{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.08em;color:var(--gold-lo);padding-top:0.12rem}
+.pr-name{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--bone);margin-bottom:0.4rem}
+.pr-desc{font-size:0.82rem;color:var(--mist);line-height:1.65}
+.pr-hooks strong{
+  display:block;font-family:var(--mono);font-size:0.55rem;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.5rem;
+}
+.pr-hooks li{font-size:0.78rem;margin-left:1rem;margin-bottom:0.25rem;color:rgba(160,152,136,0.8);line-height:1.5}
+
+/* SOCIAL */
+.soc{background:var(--coal)}
+.launch-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:rgba(200,168,75,0.12);border:1px solid rgba(200,168,75,0.12);margin-top:2.5rem;
+}
+.gc{background:var(--coal);padding:1.4rem 1.1rem;min-height:7.5rem;display:flex;flex-direction:column;justify-content:flex-start}
+.gc.pin{background:rgba(200,168,75,0.07)}
+.gc-tag{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.5rem}
+.gc-text{font-size:0.8rem;color:var(--mist);line-height:1.5}
+.gc-text strong{color:var(--bone);font-weight:500;display:block;margin-bottom:0.2rem}
+.cad-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1.4rem;margin-top:2.8rem}
+.cad-card{padding:1.4rem;border:1px solid rgba(200,168,75,0.14);background:rgba(200,168,75,0.02)}
+.cad-card label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.5rem}
+.cad-card p{font-size:0.82rem;color:var(--bone);line-height:1.5}
+
+/* TIMELINE */
+.tl{background:var(--deep)}
+.weeks{display:flex;flex-direction:column;gap:0;margin-top:3rem}
+.wk{display:grid;grid-template-columns:5.5rem 1fr;border-top:1px solid rgba(200,168,75,0.1)}
+@media(max-width:480px){.wk{grid-template-columns:3.8rem 1fr}}
+.wk-n{
+  padding:2rem 1.2rem 2rem 0;
+  font-family:var(--serif);font-size:1.7rem;font-weight:700;
+  color:rgba(200,168,75,0.18);letter-spacing:-0.03em;
+  border-right:1px solid rgba(200,168,75,0.1);
+  display:flex;align-items:flex-start;justify-content:flex-end;
+}
+.wk-c{padding:2rem 0 2rem 2rem}
+.wk-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.7rem}
+.wk-tasks{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.wk-tasks li{font-size:0.82rem;color:var(--mist);line-height:1.5;display:flex;gap:0.65rem;align-items:baseline}
+.wk-tasks li::before{content:'—';color:var(--gold-lo);flex-shrink:0;font-family:var(--mono);font-size:0.68rem}
+.wk.go .wk-n{color:rgba(200,168,75,0.6)}
+.wk.go .wk-title{color:var(--gold)}
+
+/* EMAIL */
+.em{background:var(--ash)}
+.em-two{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+@media(max-width:700px){.em-two{grid-template-columns:1fr;gap:3rem}}
+.em-flows{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.em-flow{padding:1.2rem 0;border-bottom:1px solid rgba(200,168,75,0.1);display:flex;gap:1.4rem;align-items:flex-start}
+.fl-icon{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);min-width:3.2rem;padding-top:0.1rem}
+.fl-name{font-size:0.86rem;color:var(--bone);font-weight:500;margin-bottom:0.2rem}
+.fl-desc{font-size:0.79rem;color:var(--mist);line-height:1.6}
+.em-box{border:1px solid rgba(200,168,75,0.2);padding:1.8rem;background:rgba(200,168,75,0.03)}
+.em-box label{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:1rem}
+.em-price{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--gold);margin-bottom:0.3rem}
+.em-list{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(200,168,75,0.1)}
+.em-list li{font-size:0.8rem;color:var(--mist);display:flex;gap:0.65rem}
+.em-list li::before{content:'—';color:var(--gold-lo);flex-shrink:0;font-family:var(--mono);font-size:0.68rem}
+
+/* ADS */
+.ads{background:var(--coal)}
+.ads-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3rem}
+@media(max-width:580px){.ads-grid{grid-template-columns:1fr}}
+.ads-card{padding:1.8rem;border:1px solid rgba(200,168,75,0.14);background:rgba(200,168,75,0.02)}
+.ads-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.28rem}
+.ads-card .ads-sub{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem}
+.ads-card p{font-size:0.82rem;color:var(--mist);line-height:1.7}
+.ads-spend{
+  margin-top:2.5rem;padding:1.5rem 2rem;
+  background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);
+  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;
+}
+.ads-spend label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.3rem}
+.ads-spend-val{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--gold)}
+.ads-spend-note{font-size:0.78rem;color:var(--mist);margin-top:0.2rem;line-height:1.5}
+
+/* WEBSITE */
+.web{background:var(--deep)}
+.web-opts{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3rem}
+@media(max-width:560px){.web-opts{grid-template-columns:1fr}}
+.web-opt{padding:2rem;border:1px solid rgba(200,168,75,0.14)}
+.web-opt.pri{border-color:rgba(200,168,75,0.38);background:rgba(200,168,75,0.04)}
+.web-opt-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;display:block}
+.web-opt h4{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--bone);margin-bottom:0.45rem}
+.web-opt .web-price{font-family:var(--mono);font-size:0.8rem;color:var(--gold-hi);margin-bottom:0.9rem}
+.web-opt p{font-size:0.82rem;color:var(--mist);line-height:1.7}
+
+/* KPIs */
+.kpi{background:var(--ash)}
+.kpi-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));
+  gap:1px;background:rgba(200,168,75,0.1);
+  border:1px solid rgba(200,168,75,0.1);margin-top:3rem;
+}
+.kpi-card{background:var(--ash);padding:1.8rem 1.6rem}
+.kpi-card label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.7rem}
+.kpi-card .kpi-val{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.4rem}
+.kpi-card p{font-size:0.78rem;color:var(--mist);line-height:1.6}
+
+/* CLOSE */
+.cls{
+  background:var(--ink);padding:8rem 2.5rem;
+  text-align:center;position:relative;overflow:hidden;
+}
+.cls-glow{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:60vw;height:60vh;
+  background:radial-gradient(ellipse at center,rgba(200,168,75,0.05) 0%,transparent 65%);
+  pointer-events:none;
+}
+.cls-title{
+  font-family:var(--serif);font-size:clamp(2.3rem,7vw,5rem);
+  font-weight:700;line-height:0.95;color:var(--bone);
+  letter-spacing:-0.02em;margin-bottom:2rem;
+}
+.cls-title em{font-style:italic;color:var(--gold)}
+.cls-body{font-size:0.92rem;color:var(--mist);max-width:34rem;margin:0 auto 3rem;line-height:1.85}
+.cls-meta{
+  display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;
+  padding-top:3rem;border-top:1px solid rgba(200,168,75,0.15);
+}
+.cls-meta label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.35rem}
+.cls-meta p{font-family:var(--mono);font-size:0.76rem;color:var(--bone)}
+
+/* REVEAL */
+.r{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease,transform 0.7s ease}
+.r.v{opacity:1;transform:translateY(0)}
+.r.d1{transition-delay:0.1s}.r.d2{transition-delay:0.22s}.r.d3{transition-delay:0.34s}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<nav>
+  <div class="nav-brand">Fetchwave <span>/</span> BULL Biltong</div>
+  <div class="nav-pills">
+    <a href="#scope" class="nav-pill">Scope</a>
+    <a href="#content" class="nav-pill">Content</a>
+    <a href="#timeline" class="nav-pill">Timeline</a>
+    <a href="#budget" class="nav-pill">Budget</a>
+
+  </div>
+</nav>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-glow"></div>
+  <div>
+    <p class="cover-tag">Confidential &middot; Marketing Proposal &middot; 2024</p>
+    <h1 class="cover-h1">BULL<br><em>Biltong.</em></h1>
+    <p class="cover-sub">A full-service launch strategy for South Africa's most traceable premium biltong brand. Month one. Castle Gate, Johannesburg. Built to make noise that lasts.</p>
+  </div>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <label>Prepared by</label>
+      <p>Fetchwave</p>
+    </div>
+    <div class="cover-meta-item">
+      <label>Prepared for</label>
+      <p>BULL Biltong &middot; Tom &amp; Team</p>
+    </div>
+    <div class="cover-meta-item">
+      <label>Location</label>
+      <p>Castle Gate, Johannesburg</p>
+    </div>
+    <div class="cover-meta-item">
+      <label>Month One Retainer</label>
+      <div class="cover-retainer">R12,500</div>
+    </div>
+  </div>
+</div>
+
+<!-- VALUE PROP -->
+<section class="section vp" id="scope">
+  <div class="si">
+    <p class="sl r">Why This Works</p>
+    <p class="vp-stmt r d1">R12,500 for month one is not a starting point — it is a <strong>fully loaded launch.</strong> Strategy, a professional content shoot, social media takeover, website coordination, and Klaviyo email setup. All in. No hidden scope.</p>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section inc">
+  <div class="si">
+    <p class="sl r">Retainer Scope</p>
+    <h2 class="sh r d1">Everything in<br><em>Month One.</em></h2>
+    <p class="sb r d2">The R12,500 retainer is all-inclusive for the launch period. Below is exactly what it covers — no ambiguity, no additions buried in small print.</p>
+    <div class="inc-grid">
+      <div class="inc-item r">
+        <span class="inc-n">01</span>
+        <h3 class="inc-title">Creative Direction &amp; Strategy</h3>
+        <p class="inc-body">Full brand positioning, content strategy, tone-of-voice guidelines, audience research, and the overarching launch plan. The thinking that makes everything else work.</p>
+        <span class="inc-tag">Included</span>
+      </div>
+      <div class="inc-item r d1">
+        <span class="inc-n">02</span>
+        <h3 class="inc-title">Content Shoot</h3>
+        <p class="inc-body">Professional shoot at Castle Gate — shop interior and exterior, product hero shots, packaging, ear-tag details, lifestyle content, and Tom to-camera pieces. Fully coordinated and delivered.</p>
+        <span class="inc-tag">Included as courtesy</span>
+      </div>
+      <div class="inc-item r d2">
+        <span class="inc-n">03</span>
+        <h3 class="inc-title">Social Media Takeover</h3>
+        <p class="inc-body">Full account management from day one. Launch grid build, 3 pinned posts, 9 curated posts, then 3 posts per week plus daily Stories. End-to-end execution.</p>
+        <span class="inc-tag">Included</span>
+      </div>
+      <div class="inc-item r">
+        <span class="inc-n">04</span>
+        <h3 class="inc-title">Archive Asset Repurposing</h3>
+        <p class="inc-body">We receive, catalogue, and integrate the existing stud farm content stockpile. Good material should not sit on a hard drive — it fuels the launch grid and teaser phase.</p>
+        <span class="inc-tag">Included</span>
+      </div>
+      <div class="inc-item r d1">
+        <span class="inc-n">05</span>
+        <h3 class="inc-title">Website Coordination</h3>
+        <p class="inc-body">Light refresh and launch-readiness review included in the retainer. We coordinate the update and ensure the site matches the brand position on opening day. Major work scoped separately only if required.</p>
+        <span class="inc-tag">Light refresh included</span>
+      </div>
+      <div class="inc-item r d2">
+        <span class="inc-n">06</span>
+        <h3 class="inc-title">Klaviyo Email Setup</h3>
+        <p class="inc-body">Account setup, list structure, welcome flow, and launch announcement email. Simple, clean, and ready to capture everyone who walks through the door or visits the site.</p>
+        <span class="inc-tag">Included</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="section bud" id="budget">
+  <div class="si">
+    <p class="sl r">Budget Breakdown</p>
+    <h2 class="sh r d1">Full Cost<br><em>Overview.</em></h2>
+    <p class="sb r d2">A transparent breakdown of all costs for the first month. The retainer covers the agency deliverables. Additional items are optional or client-funded, clearly flagged throughout.</p>
+    <table class="bud-table r">
+      <thead>
+        <tr>
+          <th style="width:36%">Item</th>
+          <th style="width:22%">Cost</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hi">
+          <td class="tn"><strong>Agency Retainer — Month One</strong></td>
+          <td class="tc">R12,500</td>
+          <td class="td">All-inclusive. Strategy, shoot, social management, content plan, website coordination, Klaviyo setup. Fixed. No surprises.</td>
+        </tr>
+        <tr>
+          <td class="tn">Paid Advertising — Meta &amp; Google</td>
+          <td class="tc">R8,000 – R15,000</td>
+          <td class="td"><strong>Recommended.</strong> Client-funded, billed directly to client ad accounts. Campaign management handled within the retainer. Meta first, Google Search introduced post-launch.</td>
+        </tr>
+        <tr>
+          <td class="tn">Website Labour — if major work required</td>
+          <td class="tc">R5,000 – R10,000</td>
+          <td class="td">Only if a significant redesign or new functionality is needed beyond a light refresh. Confirmed after handover review — no assumptions made upfront.</td>
+        </tr>
+        <tr>
+          <td class="tn">Website — external developer costs if rebuild needed</td>
+          <td class="tc">R12,000 – R28,000</td>
+          <td class="td">Light refresh: R12,000 – R18,000 total. Full rebuild: R22,000 – R28,000 total. Scoped and agreed before any work begins.</td>
+        </tr>
+        <tr>
+          <td class="tn">Klaviyo — email platform subscription</td>
+          <td class="tc">R1,000 – R2,000</td>
+          <td class="td">Client account. Low-cost monthly subscription. Setup and flows built within the retainer.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="bud-callout r">
+      <div class="bud-callout-icon">&#x52;</div>
+      <div>
+        <h4>Conservative Month One Estimate</h4>
+        <p>Retainer + recommended ad spend: <strong>R20,500 – R27,500 all-in.</strong> This is a full-service agency month — strategy, production, social management, email, and paid media — for a budget most agencies reserve for strategy alone. We are invested in making BULL the launch that people remember.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT STRATEGY -->
+<section class="section cnt" id="content">
+  <div class="si">
+    <p class="sl r">Content Strategy</p>
+    <h2 class="sh r d1">Five Pillars.<br><em>One Voice.</em></h2>
+    <p class="sb r d2">Creative direction is not a deliverable we produce at the end — it is the foundation every piece of content is built on. BULL speaks with earned authority: understated, factual, provenance-led. No hype. No filler words. The product earns the attention.</p>
+    <div class="tone-block r">
+      <h4>Brand Tone &mdash; The Brenaissance</h4>
+      <div class="tone-tags">
+        <span class="tone-tag">Understated</span>
+        <span class="tone-tag">Provenance-led</span>
+        <span class="tone-tag">Factual</span>
+        <span class="tone-tag">Confident</span>
+        <span class="tone-tag">No hype</span>
+        <span class="tone-tag">Earned authority</span>
+        <span class="tone-tag">Farm-rooted</span>
+        <span class="tone-tag">Premium without pretension</span>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pr r">
+        <div class="pr-n">01</div>
+        <div>
+          <div class="pr-name">Founder Storytelling</div>
+          <div class="pr-desc">Tom is the brand. His background — the stud farm, the decision to build BULL, the refusal to compromise on quality — is the most powerful asset we have. We put him on camera and let the truth do the work. No scripted marketing speak. Real answers to direct questions.</div>
+        </div>
+        <div class="pr-hooks">
+          <strong>Hook Ideas</strong>
+          <ul>
+            <li>"I grew up on this farm. Here's why that matters."</li>
+            <li>"The ear-tag stays on until I'm satisfied with the cut."</li>
+            <li>"Why I built a butchery before I built a brand."</li>
+            <li>"What 20 years of farming taught me about beef."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pr r">
+        <div class="pr-n">02</div>
+        <div>
+          <div class="pr-name">Product Truth &amp; Provenance</div>
+          <div class="pr-desc">Ear-tags, cuts, the curing process, what makes this beef different from supermarket shelf biltong. We show the process — from farm to packaging — without over-explaining. The footage makes the case.</div>
+        </div>
+        <div class="pr-hooks">
+          <strong>Hook Ideas</strong>
+          <ul>
+            <li>"Every piece has a number. Here's what it means."</li>
+            <li>"This is what grass-fed actually looks like."</li>
+            <li>"From ear-tag to packaging in under 60 seconds."</li>
+            <li>"Most biltong has six ingredients it can't name."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pr r">
+        <div class="pr-n">03</div>
+        <div>
+          <div class="pr-name">Health &amp; Lifestyle Benefits</div>
+          <div class="pr-desc">32g protein per 100g. No artificial fillers. Grass-fed. High iron and zinc bioavailability. These are facts — we state them plainly and let the numbers do the persuading. Target: active adults, performance-conscious eaters, clean-label consumers.</div>
+        </div>
+        <div class="pr-hooks">
+          <strong>Hook Ideas</strong>
+          <ul>
+            <li>"32 grams of protein. One ingredient list."</li>
+            <li>"Your post-gym snack shouldn't need a chemistry degree."</li>
+            <li>"Clean label is not a trend. It's the baseline."</li>
+            <li>"High protein. No powder. No compromise."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pr r">
+        <div class="pr-n">04</div>
+        <div>
+          <div class="pr-name">Scroll-Stop Hook Content</div>
+          <div class="pr-desc">Researched hooks built for the target audience — people who follow food quality, fitness, and provenance content. Fast, factual, designed to stop the scroll in the first two seconds. No trend-chasing. Hooks that hold up in six months.</div>
+        </div>
+        <div class="pr-hooks">
+          <strong>Hook Ideas</strong>
+          <ul>
+            <li>"We know this animal's birthday."</li>
+            <li>"South Africa's most traceable biltong. Now open."</li>
+            <li>"Watch it sliced. Know where it came from."</li>
+            <li>"Not all biltong is equal. Here's the proof."</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pr r">
+        <div class="pr-n">05</div>
+        <div>
+          <div class="pr-name">Offers &amp; Promotions</div>
+          <div class="pr-desc">Launch-week pricing, loyalty signals, and opening day offers. Communicated plainly — no artificial urgency, no inflated RRP. The offer is real, the deadline is real, and the product justifies itself beyond the discount.</div>
+        </div>
+        <div class="pr-hooks">
+          <strong>Hook Ideas</strong>
+          <ul>
+            <li>"Opening week. Launch price. First come."</li>
+            <li>"One week only — then the price is the price."</li>
+            <li>"Come in. Taste it. Decide."</li>
+            <li>"We don't run promotions. Except this once."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="section soc">
+  <div class="si">
+    <p class="sl r">Social Media Plan</p>
+    <h2 class="sh r d1">Launch Grid<br><em>Structure.</em></h2>
+    <p class="sb r d2">The Instagram grid is the first impression. Three pinned posts anchor the brand, nine curated posts below establish depth, then the ongoing cadence takes over. Everything supported by the stud farm archive and the Castle Gate shoot.</p>
+    <div class="launch-grid r">
+      <div class="gc pin"><div class="gc-tag">Pin 01</div><div class="gc-text"><strong>Core Brand Story</strong>BULL, the farm, the why. Tom direct to camera.</div></div>
+      <div class="gc pin"><div class="gc-tag">Pin 02</div><div class="gc-text"><strong>Ear-Tag Proof</strong>The traceability story in 60 seconds. Visual, factual, ownable.</div></div>
+      <div class="gc pin"><div class="gc-tag">Pin 03</div><div class="gc-text"><strong>Tom's Message</strong>Founder direct address. What BULL stands for.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Farm Footage</strong>Stud farm archive — cattle, land, process.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Product Hero</strong>Sliced biltong, packaging, textures close-up.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Health Fact</strong>Protein stat, clean label, single-source beef.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Castle Gate</strong>Shop exterior and interior. Place as brand.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Process Film</strong>Curing, slicing, packaging sequence.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Quote / Hook</strong>Single-line provenance statement. Typographic.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Behind the Cut</strong>Tom at work. Craft, not performance.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Launch Tease</strong>Opening date reveal. Minimal, high-impact.</div></div>
+      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Lifestyle</strong>Product in context. Table, kitchen, outdoors.</div></div>
+    </div>
+    <div class="cad-row r">
+      <div class="cad-card"><label>Ongoing cadence</label><p>3 posts per week + daily Stories. Quality-first. We do not post for the sake of posting.</p></div>
+      <div class="cad-card"><label>Stories strategy</label><p>Daily — behind the scenes, product of the day, farm archive, customer content amplification.</p></div>
+      <div class="cad-card"><label>Platforms — phase one</label><p>Instagram primary. Facebook mirrored. TikTok assessed at Week 5 review based on audience data.</p></div>
+      <div class="cad-card"><label>Target audience</label><p>Active adults 25–45, Joburg and surrounds. Food-quality-conscious, high earning, low tolerance for mediocre products.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section tl" id="timeline">
+  <div class="si">
+    <p class="sl r">5-Week Timeline</p>
+    <h2 class="sh r d1">Week by Week.<br><em>No Gaps.</em></h2>
+    <p class="sb r d2">From handover to grand opening in four weeks, with the fifth beginning the sustained rollout. Every task is sequenced deliberately — nothing waits on something that should have been done already.</p>
+    <div class="weeks r">
+      <div class="wk">
+        <div class="wk-n">01</div>
+        <div class="wk-c">
+          <div class="wk-title">Foundations &amp; Handover</div>
+          <ul class="wk-tasks">
+            <li>Receive stud farm content archive — catalogue and assess usable material</li>
+            <li>Social account and website handovers confirmed</li>
+            <li>Website review — confirm light refresh suffices or flag if additional work is needed</li>
+            <li>Finalise shoot brief, locations, and logistics for Week 2</li>
+            <li>Teaser content goes live using existing archive assets</li>
+            <li>Klaviyo account created and list structure configured</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wk">
+        <div class="wk-n">02</div>
+        <div class="wk-c">
+          <div class="wk-title">Shoot &amp; Production</div>
+          <ul class="wk-tasks">
+            <li>Execute content shoot at Castle Gate — shop, products, Tom interviews, lifestyle</li>
+            <li>Edit and organise all assets: archive footage and new shoot material combined</li>
+            <li>Begin website light refresh work</li>
+            <li>Build the full 12-post launch grid (3 pinned + 9 curated)</li>
+            <li>Draft captions, hooks, and Stories scripts for approval</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wk">
+        <div class="wk-n">03</div>
+        <div class="wk-c">
+          <div class="wk-title">Finalise &amp; Soft Launch</div>
+          <ul class="wk-tasks">
+            <li>Finalise all launch content and ad creatives</li>
+            <li>Website refresh complete and live</li>
+            <li>Soft launch — social grid goes live across all platforms</li>
+            <li>Klaviyo welcome flow activated — captures from website and social bio</li>
+            <li>Ad creatives submitted for review and approval</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wk go">
+        <div class="wk-n">04</div>
+        <div class="wk-c">
+          <div class="wk-title">Grand Opening — Castle Gate</div>
+          <ul class="wk-tasks">
+            <li>Grand opening event at Castle Gate — live coverage via Stories and Reels</li>
+            <li>Paid Meta ads go live — launch offer and brand awareness campaigns simultaneously</li>
+            <li>Full content cadence begins: 3 posts per week + daily Stories</li>
+            <li>Klaviyo launch announcement email sent to full list</li>
+            <li>Opening-week offer communicated across all channels</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wk">
+        <div class="wk-n">05+</div>
+        <div class="wk-c">
+          <div class="wk-title">Optimise &amp; Sustain</div>
+          <ul class="wk-tasks">
+            <li>Week 4 performance review — reach, engagement, email metrics, in-store uplift</li>
+            <li>Ad spend reviewed against benchmarks — scale or adjust per channel</li>
+            <li>Ongoing 3-posts-per-week cadence maintained</li>
+            <li>Customer content and UGC identified and amplified</li>
+            <li>Month two scope and retainer discussed based on results</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMAIL -->
+<section class="section em">
+  <div class="si">
+    <p class="sl r">Email — Klaviyo</p>
+    <h2 class="sh r d1">Simple Setup.<br><em>Day One Ready.</em></h2>
+    <div class="em-two">
+      <div>
+        <p class="sb r">We use Klaviyo. Purpose-built for product brands, it integrates with most e-commerce platforms and keeps lists clean and segmented from the start. Setup and flows are built within the retainer — the client holds the account.</p>
+        <p class="sb r d1" style="margin-top:0.9rem">For launch we keep it focused. Two flows. One announcement. No bloated automation that nobody reads.</p>
+        <div class="em-flows">
+          <div class="em-flow r">
+            <div class="fl-icon">Flow 01</div>
+            <div><div class="fl-name">Welcome Flow</div><div class="fl-desc">Triggered immediately on signup. Brand story, what to expect, soft intro to the product. Two emails spaced three days apart. Goes live Week 3.</div></div>
+          </div>
+          <div class="em-flow r d1">
+            <div class="fl-icon">Flow 02</div>
+            <div><div class="fl-name">Launch Announcement</div><div class="fl-desc">One broadcast email to the full list on opening day. Opening details, launch offer, direct CTA to visit Castle Gate. Sent Week 4.</div></div>
+          </div>
+          <div class="em-flow r d2">
+            <div class="fl-icon">Post</div>
+            <div><div class="fl-name">Post-Launch Cadence</div><div class="fl-desc">Monthly rhythm assessed at Week 5 review. Only send when there is something worth saying — new product, restock, behind-the-scenes update.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="r d1">
+        <div class="em-box">
+          <label>Klaviyo Cost</label>
+          <div class="em-price">R1,000 – R2,000 /mo</div>
+          <p style="font-size:0.8rem;color:var(--mist);line-height:1.7">Client account. Scales with list size — this estimate covers launch phase up to ~1,000 subscribers.</p>
+          <ul class="em-list">
+            <li>Account and list setup</li>
+            <li>Welcome flow — 2 emails</li>
+            <li>Launch announcement email</li>
+            <li>Signup form for website and social bio link</li>
+            <li>Basic audience segmentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADS -->
+<section class="section ads">
+  <div class="si">
+    <p class="sl r">Paid Advertising</p>
+    <h2 class="sh r d1">Recommended.<br><em>Not Required.</em></h2>
+    <p class="sb r d2">Paid ads are not included in the retainer — but we strongly recommend allocating budget from Week 4. Organic launch builds the foundation; paid ads accelerate reach during the opening window when momentum matters most. All campaign management is handled within the retainer fee.</p>
+    <div class="ads-grid r">
+      <div class="ads-card">
+        <h4>Meta Ads — Phase One</h4>
+        <div class="ads-sub">Facebook &amp; Instagram &middot; Weeks 4–6</div>
+        <p>Brand awareness and launch offer campaigns. Geo-targeted to Johannesburg and surrounds. We start conservatively, read the data, and scale what works. Retargeting audiences built from Week 3 organic activity for maximum efficiency on opening day.</p>
+      </div>
+      <div class="ads-card">
+        <h4>Google Search — Phase Two</h4>
+        <div class="ads-sub">Assessed post-launch &middot; Week 5+</div>
+        <p>Introduced once Meta data gives us intent signals. Search campaigns capture people actively looking for premium biltong in Johannesburg. Low volume, high intent — cost-efficient once the brand has name recognition from the social launch.</p>
+      </div>
+    </div>
+    <div class="ads-spend r">
+      <div>
+        <label>Recommended Month One Ad Spend</label>
+        <div class="ads-spend-val">R8,000 – R15,000</div>
+        <div class="ads-spend-note">Client-funded &middot; billed directly to client ad accounts &middot; managed within retainer</div>
+      </div>
+      <div style="max-width:30rem">
+        <label>Our Approach</label>
+        <p style="font-size:0.82rem;color:var(--mist);line-height:1.75">Start at the lower end. Review performance at the two-week mark. Scale channels that are delivering. We do not spend on awareness before the organic content base is in place — which is why ads go live in Week 4, not Week 1.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBSITE -->
+<section class="section web">
+  <div class="si">
+    <p class="sl r">Website</p>
+    <h2 class="sh r d1">Refresh First.<br><em>Rebuild Only if Needed.</em></h2>
+    <p class="sb r d2">We review the current website immediately after account handover. Our default is a light refresh to get it launch-ready — this coordination is included in the retainer. If the site needs significant structural work, we scope it transparently and agree before anything starts.</p>
+    <div class="web-opts r">
+      <div class="web-opt pri">
+        <span class="web-opt-tag">Default — included in retainer</span>
+        <h4>Light Refresh</h4>
+        <div class="web-price">Agency coordination included &middot; External costs R12,000 – R18,000 if required</div>
+        <p>Update to match brand position. Improve product pages, imagery swap, copy alignment, speed check, mobile optimisation. Enough to go live with confidence on opening day without a long rebuild process.</p>
+      </div>
+      <div class="web-opt">
+        <span class="web-opt-tag">Only if required — agreed after handover</span>
+        <h4>Full Rebuild</h4>
+        <div class="web-price">Agency labour R5,000 – R10,000 + external R22,000 – R28,000</div>
+        <p>Major redesign, new shop functionality, traceability integration, or significant structural work. Scoped separately after the handover review. We do not assume this is needed — and we do not charge for it unless it is.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CLOSE -->
+<div class="cls">
+  <div class="cls-glow"></div>
+  <p class="sl r" style="justify-content:center;margin-bottom:2rem">Next Steps</p>
+  <h2 class="cls-title r d1">Let's Build<br>Something <em>Lasting.</em></h2>
+  <p class="cls-body r d2">BULL does not need gimmicks. It needs a team that understands provenance, respects the product, and knows how to put the right story in front of the right people. That is what this plan does. Fetchwave is ready to start Week 1 on your signal.</p>
+  <div class="cls-meta r d3">
+    <div><label>Retainer — Month One</label><p>R12,500 &middot; All-inclusive</p></div>
+    <div><label>Conservative Total</label><p>R20,500 – R27,500</p></div>
+    <div><label>Launch Target</label><p>Week 4 &middot; Castle Gate Opening</p></div>
+    <div><label>Email Platform</label><p>Klaviyo &middot; Setup Included</p></div>
+  </div>
+</div>
+
+<footer style="background:var(--ink);border-top:1px solid rgba(200,168,75,0.1);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+  <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lo)">Fetchwave &middot; BULL Biltong &middot; Confidential</div>
+  <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(160,152,136,0.25)">&copy; 2024 &middot; Fetchwave</div>
+</footer>
+
+<script>
+const bar=document.getElementById('progress');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  bar.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}});
+},{threshold:0.1});
+document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
