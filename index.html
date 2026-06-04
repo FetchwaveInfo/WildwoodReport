@@ -3,797 +3,1388 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BULL Biltong — Marketing Proposal 2024</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Wildwood — 6 Month Report · Jan–May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --ink:#0c0b09;--deep:#131210;--coal:#1a1916;--ash:#222019;--dust:#2a2825;
-  --gold:#c8a84b;--gold-lo:#7a6528;--gold-hi:#e4c878;
-  --bone:#e6dece;--mist:#a09888;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'DM Sans',sans-serif;
-  --mono:'DM Mono',monospace;
-}
-html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--bone);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+  :root {
+    --forest:   #1b3a2d;
+    --forest2:  #254d3c;
+    --moss:     #3d6b52;
+    --sage:     #7aab8a;
+    --lime:     #b8d96b;
+    --cream:    #f4efe4;
+    --parchment:#e8e0cc;
+    --gold:     #c9a228;
+    --gold-lt:  #e4c44a;
+    --ember:    #e05a28;
+    --white:    #ffffff;
+    --ink:      #1a2820;
+    --muted:    #5a7a6a;
+    --sidebar:  240px;
+  }
 
-#progress{position:fixed;top:0;left:0;height:2px;background:var(--gold);z-index:200;width:0;transition:width 0.1s}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
 
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:1.1rem 2.5rem;
-  background:rgba(12,11,9,0.96);
-  border-bottom:1px solid rgba(200,168,75,0.12);
-}
-.nav-brand{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase}
-.nav-brand span{color:var(--mist);margin:0 0.5rem}
-.nav-pills{display:flex;gap:0.3rem}
-.nav-pill{
-  font-family:var(--mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;
-  padding:0.35rem 0.75rem;background:transparent;border:1px solid transparent;
-  color:var(--mist);cursor:pointer;text-decoration:none;transition:all 0.2s;border-radius:2px;
-}
-.nav-pill:hover{border-color:rgba(200,168,75,0.3);color:var(--gold-hi)}
-@media(max-width:680px){.nav-pills{display:none}nav{padding:1rem 1.4rem}}
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* COVER */
-.cover{
-  min-height:100svh;display:flex;flex-direction:column;justify-content:space-between;
-  padding:8rem 2.5rem 3.5rem;position:relative;
-  border-bottom:1px solid rgba(200,168,75,0.15);overflow:hidden;
-}
-.cover-glow{
-  position:absolute;top:-10%;right:-5%;width:55vw;height:70vh;
-  background:radial-gradient(ellipse at center,rgba(200,168,75,0.07) 0%,transparent 65%);
-  pointer-events:none;
-}
-.cover-tag{
-  font-family:var(--mono);font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:0.8rem;margin-bottom:3rem;
-  opacity:0;animation:fadeUp 0.7s 0.2s ease forwards;
-}
-.cover-tag::before{content:'';width:2rem;height:1px;background:var(--gold)}
-.cover-h1{
-  font-family:var(--serif);font-size:clamp(3rem,9vw,7rem);
-  font-weight:700;line-height:0.9;letter-spacing:-0.02em;color:var(--bone);
-  opacity:0;animation:fadeUp 0.9s 0.4s ease forwards;
-}
-.cover-h1 em{font-style:italic;color:var(--gold)}
-.cover-sub{
-  max-width:34rem;margin-top:2.5rem;font-size:clamp(0.85rem,1.8vw,0.97rem);
-  color:var(--mist);line-height:1.85;
-  opacity:0;animation:fadeUp 0.9s 0.7s ease forwards;
-}
-.cover-meta{
-  display:flex;justify-content:space-between;align-items:flex-end;
-  flex-wrap:wrap;gap:1.5rem;padding-top:4rem;
-  opacity:0;animation:fadeIn 1s 1.1s ease forwards;
-}
-.cover-meta-item label{
-  display:block;font-family:var(--mono);font-size:0.58rem;
-  letter-spacing:0.25em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.3rem;
-}
-.cover-meta-item p{font-family:var(--mono);font-size:0.74rem;color:var(--bone);letter-spacing:0.04em}
-.cover-retainer{
-  font-family:var(--serif);font-size:clamp(1.3rem,2.5vw,1.9rem);
-  font-weight:700;color:var(--gold);
-  border:1px solid rgba(200,168,75,0.35);padding:0.7rem 1.4rem;
-}
-@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+  /* ─── SIDEBAR ──────────────────────────────── */
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: var(--sidebar);
+    background: var(--forest);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 0 24px;
+    z-index: 200;
+    overflow-y: auto;
+    transition: transform .35s cubic-bezier(.4,0,.2,1);
+  }
 
-/* SHARED SECTION */
-.section{padding:5.5rem 2.5rem;border-bottom:1px solid rgba(200,168,75,0.1)}
-.si{max-width:68rem;margin:0 auto}
-.sl{
-  font-family:var(--mono);font-size:0.58rem;letter-spacing:0.35em;text-transform:uppercase;
-  color:var(--gold);display:flex;align-items:center;gap:1rem;margin-bottom:1.6rem;
-}
-.sl::after{content:'';flex:1;height:1px;background:rgba(200,168,75,0.2);max-width:4rem}
-.sh{
-  font-family:var(--serif);font-size:clamp(1.9rem,4.5vw,3.6rem);
-  font-weight:700;line-height:1.02;color:var(--bone);margin-bottom:1.8rem;
-}
-.sh em{font-style:italic;color:var(--gold)}
-.sb{font-size:0.9rem;line-height:1.85;color:var(--mist);max-width:46rem}
-.sb+.sb{margin-top:0.9rem}
+  .sidebar-logo {
+    padding: 0 24px 28px;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    margin-bottom: 20px;
+  }
 
-/* VALUE PROP */
-.vp{background:var(--coal)}
-.vp-stmt{
-  font-family:var(--serif);font-size:clamp(1.3rem,3vw,2rem);
-  font-weight:600;line-height:1.4;color:var(--bone);
-  max-width:52rem;border-left:3px solid var(--gold);padding-left:2rem;
-}
-.vp-stmt strong{color:var(--gold);font-weight:700}
+  .logo-ring {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--lime);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
 
-/* INCLUDED */
-.inc{background:var(--deep)}
-.inc-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:1px;background:rgba(200,168,75,0.1);
-  border:1px solid rgba(200,168,75,0.1);margin-top:3rem;
-}
-.inc-item{background:var(--deep);padding:2rem 1.7rem;transition:background 0.25s}
-.inc-item:hover{background:rgba(200,168,75,0.04)}
-.inc-n{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.3em;color:var(--gold-lo);margin-bottom:0.9rem;display:block}
-.inc-title{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--bone);margin-bottom:0.5rem;line-height:1.2}
-.inc-body{font-size:0.82rem;line-height:1.7;color:var(--mist)}
-.inc-tag{
-  display:inline-block;margin-top:1rem;font-family:var(--mono);font-size:0.56rem;
-  letter-spacing:0.2em;text-transform:uppercase;padding:0.22rem 0.55rem;
-  background:rgba(200,168,75,0.1);color:var(--gold);border-radius:2px;
-}
+  .logo-leaf {
+    width: 22px; height: 22px;
+    background: var(--forest);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  }
 
-/* BUDGET */
-.bud{background:var(--ash)}
-.bud-table{width:100%;border-collapse:collapse;margin-top:2.5rem;font-size:0.86rem}
-.bud-table th{
-  font-family:var(--mono);font-size:0.57rem;letter-spacing:0.22em;text-transform:uppercase;
-  color:var(--gold-lo);padding:0.75rem 1rem;text-align:left;
-  border-bottom:1px solid rgba(200,168,75,0.2);
-}
-.bud-table td{padding:1rem;border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;line-height:1.5}
-.bud-table tr:hover td{background:rgba(200,168,75,0.03)}
-.bud-table .tn{color:var(--bone)}
-.bud-table .tc{font-family:var(--mono);color:var(--gold);white-space:nowrap;font-size:0.83rem}
-.bud-table .td{color:var(--mist);font-size:0.8rem}
-.bud-table .hi td{background:rgba(200,168,75,0.07)}
-.bud-table .hi .tc{color:var(--gold-hi);font-size:0.93rem;font-weight:500}
-.bud-callout{
-  margin-top:2.5rem;padding:1.7rem 2rem;
-  background:rgba(200,168,75,0.05);border:1px solid rgba(200,168,75,0.22);
-  display:flex;gap:1.8rem;align-items:flex-start;flex-wrap:wrap;
-}
-.bud-callout-icon{font-family:var(--serif);font-size:2.2rem;color:var(--gold);line-height:1;flex-shrink:0}
-.bud-callout h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.4rem}
-.bud-callout p{font-size:0.83rem;line-height:1.7;color:var(--mist)}
-.bud-callout strong{color:var(--gold-hi)}
+  .sidebar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: .02em;
+    line-height: 1;
+  }
 
-/* CONTENT */
-.cnt{background:var(--deep)}
-.tone-block{
-  margin-top:3rem;padding:1.8rem 2rem;
-  border:1px solid rgba(200,168,75,0.18);background:rgba(200,168,75,0.03);
-}
-.tone-block h4{
-  font-family:var(--mono);font-size:0.57rem;letter-spacing:0.28em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:1rem;
-}
-.tone-tags{display:flex;flex-wrap:wrap;gap:0.45rem}
-.tone-tag{
-  font-family:var(--mono);font-size:0.65rem;letter-spacing:0.08em;
-  padding:0.28rem 0.75rem;border:1px solid rgba(200,168,75,0.18);
-  color:var(--bone);border-radius:2px;
-}
-.pillars{margin-top:3rem;display:flex;flex-direction:column;gap:0}
-.pr{
-  display:grid;grid-template-columns:2.8rem 1fr 1fr;gap:2rem;
-  padding:1.8rem 0;border-bottom:1px solid rgba(200,168,75,0.1);align-items:start;
-}
-@media(max-width:580px){.pr{grid-template-columns:2.2rem 1fr;gap:1rem}.pr-hooks{display:none}}
-.pr-n{font-family:var(--mono);font-size:0.68rem;letter-spacing:0.08em;color:var(--gold-lo);padding-top:0.12rem}
-.pr-name{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--bone);margin-bottom:0.4rem}
-.pr-desc{font-size:0.82rem;color:var(--mist);line-height:1.65}
-.pr-hooks strong{
-  display:block;font-family:var(--mono);font-size:0.55rem;
-  letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.5rem;
-}
-.pr-hooks li{font-size:0.78rem;margin-left:1rem;margin-bottom:0.25rem;color:rgba(160,152,136,0.8);line-height:1.5}
+  .sidebar-sub {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 5px;
+  }
 
-/* SOCIAL */
-.soc{background:var(--coal)}
-.launch-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
-  background:rgba(200,168,75,0.12);border:1px solid rgba(200,168,75,0.12);margin-top:2.5rem;
-}
-.gc{background:var(--coal);padding:1.4rem 1.1rem;min-height:7.5rem;display:flex;flex-direction:column;justify-content:flex-start}
-.gc.pin{background:rgba(200,168,75,0.07)}
-.gc-tag{font-family:var(--mono);font-size:0.52rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);margin-bottom:0.5rem}
-.gc-text{font-size:0.8rem;color:var(--mist);line-height:1.5}
-.gc-text strong{color:var(--bone);font-weight:500;display:block;margin-bottom:0.2rem}
-.cad-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1.4rem;margin-top:2.8rem}
-.cad-card{padding:1.4rem;border:1px solid rgba(200,168,75,0.14);background:rgba(200,168,75,0.02)}
-.cad-card label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.5rem}
-.cad-card p{font-size:0.82rem;color:var(--bone);line-height:1.5}
+  .nav-section-label {
+    padding: 0 24px 8px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
 
-/* TIMELINE */
-.tl{background:var(--deep)}
-.weeks{display:flex;flex-direction:column;gap:0;margin-top:3rem}
-.wk{display:grid;grid-template-columns:5.5rem 1fr;border-top:1px solid rgba(200,168,75,0.1)}
-@media(max-width:480px){.wk{grid-template-columns:3.8rem 1fr}}
-.wk-n{
-  padding:2rem 1.2rem 2rem 0;
-  font-family:var(--serif);font-size:1.7rem;font-weight:700;
-  color:rgba(200,168,75,0.18);letter-spacing:-0.03em;
-  border-right:1px solid rgba(200,168,75,0.1);
-  display:flex;align-items:flex-start;justify-content:flex-end;
-}
-.wk-c{padding:2rem 0 2rem 2rem}
-.wk-title{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.7rem}
-.wk-tasks{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
-.wk-tasks li{font-size:0.82rem;color:var(--mist);line-height:1.5;display:flex;gap:0.65rem;align-items:baseline}
-.wk-tasks li::before{content:'—';color:var(--gold-lo);flex-shrink:0;font-family:var(--mono);font-size:0.68rem}
-.wk.go .wk-n{color:rgba(200,168,75,0.6)}
-.wk.go .wk-title{color:var(--gold)}
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    text-decoration: none;
+    color: rgba(244,239,228,.55);
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    transition: all .2s;
+    cursor: pointer;
+  }
 
-/* EMAIL */
-.em{background:var(--ash)}
-.em-two{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-@media(max-width:700px){.em-two{grid-template-columns:1fr;gap:3rem}}
-.em-flows{margin-top:2rem;display:flex;flex-direction:column;gap:0}
-.em-flow{padding:1.2rem 0;border-bottom:1px solid rgba(200,168,75,0.1);display:flex;gap:1.4rem;align-items:flex-start}
-.fl-icon{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);min-width:3.2rem;padding-top:0.1rem}
-.fl-name{font-size:0.86rem;color:var(--bone);font-weight:500;margin-bottom:0.2rem}
-.fl-desc{font-size:0.79rem;color:var(--mist);line-height:1.6}
-.em-box{border:1px solid rgba(200,168,75,0.2);padding:1.8rem;background:rgba(200,168,75,0.03)}
-.em-box label{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:1rem}
-.em-price{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--gold);margin-bottom:0.3rem}
-.em-list{list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-top:1.2rem;padding-top:1.2rem;border-top:1px solid rgba(200,168,75,0.1)}
-.em-list li{font-size:0.8rem;color:var(--mist);display:flex;gap:0.65rem}
-.em-list li::before{content:'—';color:var(--gold-lo);flex-shrink:0;font-family:var(--mono);font-size:0.68rem}
+  .nav-link:hover, .nav-link.active {
+    color: var(--cream);
+    border-left-color: var(--lime);
+    background: rgba(184,217,107,.06);
+  }
 
-/* ADS */
-.ads{background:var(--coal)}
-.ads-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3rem}
-@media(max-width:580px){.ads-grid{grid-template-columns:1fr}}
-.ads-card{padding:1.8rem;border:1px solid rgba(200,168,75,0.14);background:rgba(200,168,75,0.02)}
-.ads-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--bone);margin-bottom:0.28rem}
-.ads-card .ads-sub{font-family:var(--mono);font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.9rem}
-.ads-card p{font-size:0.82rem;color:var(--mist);line-height:1.7}
-.ads-spend{
-  margin-top:2.5rem;padding:1.5rem 2rem;
-  background:rgba(200,168,75,0.06);border:1px solid rgba(200,168,75,0.2);
-  display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem;
-}
-.ads-spend label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.3rem}
-.ads-spend-val{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--gold)}
-.ads-spend-note{font-size:0.78rem;color:var(--mist);margin-top:0.2rem;line-height:1.5}
+  .nav-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--moss);
+    flex-shrink: 0;
+    transition: background .2s;
+  }
 
-/* WEBSITE */
-.web{background:var(--deep)}
-.web-opts{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-top:3rem}
-@media(max-width:560px){.web-opts{grid-template-columns:1fr}}
-.web-opt{padding:2rem;border:1px solid rgba(200,168,75,0.14)}
-.web-opt.pri{border-color:rgba(200,168,75,0.38);background:rgba(200,168,75,0.04)}
-.web-opt-tag{font-family:var(--mono);font-size:0.55rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.7rem;display:block}
-.web-opt h4{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--bone);margin-bottom:0.45rem}
-.web-opt .web-price{font-family:var(--mono);font-size:0.8rem;color:var(--gold-hi);margin-bottom:0.9rem}
-.web-opt p{font-size:0.82rem;color:var(--mist);line-height:1.7}
+  .nav-link.active .nav-dot,
+  .nav-link:hover .nav-dot {
+    background: var(--lime);
+  }
 
-/* KPIs */
-.kpi{background:var(--ash)}
-.kpi-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));
-  gap:1px;background:rgba(200,168,75,0.1);
-  border:1px solid rgba(200,168,75,0.1);margin-top:3rem;
-}
-.kpi-card{background:var(--ash);padding:1.8rem 1.6rem}
-.kpi-card label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.7rem}
-.kpi-card .kpi-val{font-family:var(--serif);font-size:1.55rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:0.4rem}
-.kpi-card p{font-size:0.78rem;color:var(--mist);line-height:1.6}
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 20px 24px 0;
+    border-top: 1px solid rgba(255,255,255,.06);
+    font-size: 10px;
+    color: var(--moss);
+    line-height: 1.6;
+  }
 
-/* CLOSE */
-.cls{
-  background:var(--ink);padding:8rem 2.5rem;
-  text-align:center;position:relative;overflow:hidden;
-}
-.cls-glow{
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:60vw;height:60vh;
-  background:radial-gradient(ellipse at center,rgba(200,168,75,0.05) 0%,transparent 65%);
-  pointer-events:none;
-}
-.cls-title{
-  font-family:var(--serif);font-size:clamp(2.3rem,7vw,5rem);
-  font-weight:700;line-height:0.95;color:var(--bone);
-  letter-spacing:-0.02em;margin-bottom:2rem;
-}
-.cls-title em{font-style:italic;color:var(--gold)}
-.cls-body{font-size:0.92rem;color:var(--mist);max-width:34rem;margin:0 auto 3rem;line-height:1.85}
-.cls-meta{
-  display:flex;justify-content:center;gap:3.5rem;flex-wrap:wrap;
-  padding-top:3rem;border-top:1px solid rgba(200,168,75,0.15);
-}
-.cls-meta label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-lo);display:block;margin-bottom:0.35rem}
-.cls-meta p{font-family:var(--mono);font-size:0.76rem;color:var(--bone)}
+  .sidebar-footer strong {
+    color: var(--sage);
+    display: block;
+    margin-bottom: 2px;
+  }
 
-/* REVEAL */
-.r{opacity:0;transform:translateY(18px);transition:opacity 0.7s ease,transform 0.7s ease}
-.r.v{opacity:1;transform:translateY(0)}
-.r.d1{transition-delay:0.1s}.r.d2{transition-delay:0.22s}.r.d3{transition-delay:0.34s}
+  /* ─── MOBILE TOGGLE ────────────────────────── */
+  .menu-toggle {
+    display: none;
+    position: fixed;
+    bottom: 24px; right: 24px;
+    width: 52px; height: 52px;
+    background: var(--lime);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 4px 20px rgba(0,0,0,.2);
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 20px; height: 2px;
+    background: var(--forest);
+    border-radius: 2px;
+    transition: all .3s;
+  }
+
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.55);
+    z-index: 190;
+  }
+
+  /* ─── MAIN ─────────────────────────────────── */
+  .main {
+    margin-left: var(--sidebar);
+    min-height: 100vh;
+  }
+
+  /* ─── COVER ────────────────────────────────── */
+  .cover {
+    min-height: 100vh;
+    background: var(--forest);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 80px 64px 72px;
+  }
+
+  .cover-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: .07;
+  }
+
+  .cover-bg-circle.c1 {
+    width: 600px; height: 600px;
+    background: var(--lime);
+    top: -200px; right: -150px;
+  }
+
+  .cover-bg-circle.c2 {
+    width: 400px; height: 400px;
+    background: var(--gold);
+    bottom: -100px; right: 100px;
+  }
+
+  .cover-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(184,217,107,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,217,107,.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .cover-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .cover-eyebrow::before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 2px;
+    background: var(--lime);
+  }
+
+  .cover-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 6vw, 88px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: .95;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .cover-title em {
+    color: var(--lime);
+    font-style: italic;
+  }
+
+  .cover-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--sage);
+    margin-bottom: 56px;
+    position: relative;
+    letter-spacing: .02em;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 0;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  .cover-stat {
+    padding: 24px 40px 24px 0;
+    margin-right: 40px;
+    border-right: 1px solid rgba(255,255,255,.1);
+  }
+
+  .cover-stat:last-child {
+    border-right: none;
+    margin-right: 0;
+  }
+
+  .cover-stat-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    display: block;
+  }
+
+  .cover-stat-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    display: block;
+    margin-top: 6px;
+  }
+
+  .cover-stat-change {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .up { color: var(--lime); }
+  .down { color: #f0a060; }
+
+  .cover-period-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--lime), var(--gold), var(--ember));
+  }
+
+  /* ─── HERO BAND ─────────────────────────────── */
+  .hero-band {
+    background: var(--forest2);
+    padding: 56px 64px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+
+  .hero-stat {
+    padding: 0 48px 0 0;
+    border-right: 1px solid rgba(255,255,255,.08);
+  }
+
+  .hero-stat:last-child {
+    padding: 0 0 0 48px;
+    border-right: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin-bottom: 12px;
+  }
+
+  .hero-value {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .hero-label {
+    font-size: 15px;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 16px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(184,217,107,.12);
+    border: 1px solid rgba(184,217,107,.25);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--lime);
+  }
+
+  .hero-desc {
+    font-size: 13px;
+    color: var(--sage);
+    margin-top: 12px;
+    line-height: 1.6;
+    max-width: 360px;
+  }
+
+  /* ─── SECTION WRAPPER ───────────────────────── */
+  .section {
+    padding: 72px 64px;
+    border-bottom: 1px solid var(--parchment);
+    scroll-margin-top: 0;
+  }
+
+  .section:nth-child(even) {
+    background: #eee8d6;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--sage);
+    letter-spacing: .1em;
+  }
+
+  .section-eyebrow {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 6px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1.2;
+  }
+
+  /* ─── KPI GRID ──────────────────────────────── */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .kpi-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 28px 24px;
+    border: 1px solid rgba(0,0,0,.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kpi-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--parchment);
+  }
+
+  .kpi-card.accent::before { background: var(--lime); }
+  .kpi-card.gold::before   { background: var(--gold); }
+  .kpi-card.ember::before  { background: var(--ember); }
+  .kpi-card.dark {
+    background: var(--forest);
+  }
+  .kpi-card.dark::before   { background: var(--sage); }
+  .kpi-card.dark .kpi-label,
+  .kpi-card.dark .kpi-context { color: var(--sage); }
+  .kpi-card.dark .kpi-value { color: var(--cream); }
+
+  .kpi-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+
+  .kpi-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .kpi-change {
+    font-size: 12px;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+
+  .kpi-context {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ─── PLATFORM CARDS ────────────────────────── */
+  .platform-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .platform-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.07);
+  }
+
+  .platform-card-header {
+    padding: 20px 28px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .platform-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: monospace;
+    flex-shrink: 0;
+  }
+
+  .facebook .platform-icon  { background: #1877f2; color: #fff; }
+  .instagram .platform-icon { background: linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); color: #fff; }
+
+  .platform-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--forest);
+  }
+
+  .platform-period {
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: .08em;
+  }
+
+  .platform-metrics {
+    padding: 20px 28px 24px;
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .platform-metric-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+
+  .platform-metric-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .platform-metric-change {
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  /* ─── TOTAL VIEWS BANNER ────────────────────── */
+  .total-views-banner {
+    background: var(--forest);
+    border-radius: 14px;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .total-views-banner::before {
+    content: '';
+    position: absolute;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(184,217,107,.06);
+    right: -80px; top: -100px;
+  }
+
+  .tvb-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+
+  .tvb-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 56px;
+    font-weight: 900;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  .tvb-context {
+    font-size: 13px;
+    color: var(--sage);
+    margin-top: 8px;
+    max-width: 300px;
+  }
+
+  .tvb-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .tvb-item {
+    text-align: right;
+  }
+
+  .tvb-item-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 2px;
+  }
+
+  .tvb-item-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+  }
+
+  /* ─── INSIGHTS GRID ─────────────────────────── */
+  .insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .insight-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid rgba(0,0,0,.06);
+  }
+
+  .insight-tag {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+
+  .insight-tag.positive { background: rgba(184,217,107,.15); color: var(--moss); }
+  .insight-tag.neutral  { background: rgba(201,162,40,.12);  color: #8a6c12; }
+  .insight-tag.watch    { background: rgba(224,90,40,.1);    color: #b04010; }
+
+  .insight-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .insight-body {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ─── DIVIDER BAND ──────────────────────────── */
+  .divider-band {
+    background: var(--forest2);
+    padding: 32px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .divider-band-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  .divider-band-meta {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+
+  /* ─── HIGHLIGHT CARD ────────────────────────── */
+  .highlight-card {
+    background: var(--forest);
+    border-radius: 14px;
+    padding: 36px 40px;
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .highlight-card::after {
+    content: '';
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(184,217,107,.05);
+    bottom: -60px; right: -40px;
+  }
+
+  .highlight-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 12px;
+  }
+
+  .highlight-card p {
+    font-size: 13px;
+    color: var(--sage);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+
+  /* ─── COMMENTARY BLOCKS ─────────────────────── */
+  .commentary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .commentary-block {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid rgba(0,0,0,.06);
+    border-left: 4px solid var(--lime);
+  }
+
+  .commentary-block h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--forest);
+    margin-bottom: 8px;
+  }
+
+  .commentary-block p {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────── */
+  .report-footer {
+    background: var(--ink);
+    padding: 40px 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  .footer-meta {
+    font-size: 11px;
+    color: var(--moss);
+    text-align: right;
+    line-height: 1.7;
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 768px) {
+    :root { --sidebar: 0px; }
+
+    .sidebar {
+      width: 260px;
+      transform: translateX(-100%);
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .overlay.visible { display: block; }
+
+    .menu-toggle { display: flex; }
+
+    .main { margin-left: 0; }
+
+    .cover { padding: 64px 28px 56px; }
+
+    .cover-stats {
+      gap: 20px;
+    }
+
+    .cover-stat {
+      border-right: none;
+      margin-right: 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      padding-bottom: 16px;
+      width: 100%;
+    }
+
+    .cover-stat:last-child { border-bottom: none; }
+
+    .hero-band {
+      grid-template-columns: 1fr;
+      padding: 40px 28px;
+      gap: 40px;
+    }
+
+    .hero-stat { padding: 0; border-right: none; border-bottom: 1px solid rgba(255,255,255,.08); padding-bottom: 32px; }
+    .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .section { padding: 48px 28px; }
+
+    .section-header { gap: 12px; }
+    .section-title { font-size: 24px; }
+
+    .platform-grid { grid-template-columns: 1fr; }
+
+    .commentary-grid { grid-template-columns: 1fr; }
+
+    .total-views-banner {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 28px;
+    }
+
+    .tvb-value { font-size: 40px; }
+
+    .tvb-breakdown { flex-direction: row; gap: 24px; }
+    .tvb-item { text-align: left; }
+
+    .divider-band { flex-direction: column; gap: 6px; padding: 24px 28px; }
+
+    .report-footer { flex-direction: column; padding: 32px 28px; text-align: center; }
+    .footer-meta { text-align: center; }
+  }
 </style>
 </head>
 <body>
-<div id="progress"></div>
 
-<nav>
-  <div class="nav-brand">Fetchwave <span>/</span> BULL Biltong</div>
-  <div class="nav-pills">
-    <a href="#scope" class="nav-pill">Scope</a>
-    <a href="#content" class="nav-pill">Content</a>
-    <a href="#timeline" class="nav-pill">Timeline</a>
-    <a href="#budget" class="nav-pill">Budget</a>
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-ring">
+      <div class="logo-leaf"></div>
+    </div>
+    <div class="sidebar-brand">Wildwood</div>
+    <div class="sidebar-sub">Performance Report</div>
+  </div>
+
+  <div class="nav-section-label" style="margin-bottom:6px;">Contents</div>
+  <div class="nav-link active" onclick="scrollTo('cover')"><span class="nav-dot"></span>Overview</div>
+  <div class="nav-link" onclick="scrollTo('key-wins')"><span class="nav-dot"></span>Key Wins</div>
+  <div class="nav-link" onclick="scrollTo('social-views')"><span class="nav-dot"></span>Social Views</div>
+  <div class="nav-link" onclick="scrollTo('facebook')"><span class="nav-dot"></span>Facebook</div>
+  <div class="nav-link" onclick="scrollTo('instagram')"><span class="nav-dot"></span>Instagram</div>
+  <div class="nav-link" onclick="scrollTo('ads')"><span class="nav-dot"></span>Ads & Impressions</div>
+  <div class="nav-link" onclick="scrollTo('revenue')"><span class="nav-dot"></span>Revenue & Customers</div>
+  <div class="nav-link" onclick="scrollTo('commentary')"><span class="nav-dot"></span>Commentary</div>
+
+  <div class="sidebar-footer">
+    <strong>Prepared by Fetchwave</strong>
+    Report period: Jan – May 2026
   </div>
 </nav>
 
-<!-- COVER -->
-<div class="cover">
-  <div class="cover-glow"></div>
-  <div>
-    <p class="cover-tag">Confidential &middot; Marketing Proposal &middot; 2024</p>
-    <h1 class="cover-h1">BULL<br><em>Biltong.</em></h1>
-    <p class="cover-sub">A full-service launch strategy for South Africa's most traceable premium biltong brand. Month one. Castle Gate, Johannesburg. Built to make noise that lasts.</p>
-  </div>
-  <div class="cover-meta">
-    <div class="cover-meta-item">
-      <label>Prepared by</label>
-      <p>Fetchwave</p>
-    </div>
-    <div class="cover-meta-item">
-      <label>Prepared for</label>
-      <p>BULL Biltong &middot; Tom &amp; Team</p>
-    </div>
-    <div class="cover-meta-item">
-      <label>Location</label>
-      <p>Castle Gate, Johannesburg</p>
-    </div>
-    <div class="cover-meta-item">
-      <label>Month One Retainer</label>
-      <div class="cover-retainer">R12,500</div>
-    </div>
-  </div>
-</div>
+<!-- MOBILE BUTTON -->
+<button class="menu-toggle" id="menuToggle" onclick="openMenu()">
+  <span></span><span></span><span></span>
+</button>
 
-<!-- VALUE PROP -->
-<section class="section vp" id="scope">
-  <div class="si">
-    <p class="sl r">Why This Works</p>
-    <p class="vp-stmt r d1">R12,500 for month one is not a starting point — it is a <strong>fully loaded launch.</strong> Strategy, a professional content shoot, social media takeover, website coordination, and Klaviyo email setup. All in. No hidden scope.</p>
-  </div>
-</section>
+<!-- MAIN CONTENT -->
+<div class="main">
 
-<!-- WHAT'S INCLUDED -->
-<section class="section inc">
-  <div class="si">
-    <p class="sl r">Retainer Scope</p>
-    <h2 class="sh r d1">Everything in<br><em>Month One.</em></h2>
-    <p class="sb r d2">The R12,500 retainer is all-inclusive for the launch period. Below is exactly what it covers — no ambiguity, no additions buried in small print.</p>
-    <div class="inc-grid">
-      <div class="inc-item r">
-        <span class="inc-n">01</span>
-        <h3 class="inc-title">Creative Direction &amp; Strategy</h3>
-        <p class="inc-body">Full brand positioning, content strategy, tone-of-voice guidelines, audience research, and the overarching launch plan. The thinking that makes everything else work.</p>
-        <span class="inc-tag">Included</span>
+  <!-- ═══════════════════════════════
+       COVER
+  ═══════════════════════════════ -->
+  <div class="cover" id="cover">
+    <div class="cover-period-bar"></div>
+    <div class="cover-bg-circle c1"></div>
+    <div class="cover-bg-circle c2"></div>
+    <div class="cover-bg-grid"></div>
+
+    <div class="cover-eyebrow">January – May 2026 · 6-Month Performance Report</div>
+
+    <div class="cover-title">
+      Wild<em>wood</em>
+    </div>
+    <div class="cover-subtitle">Healthy Energy Alternative — Marketing & Brand Performance</div>
+
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <span class="cover-stat-value">1.18M</span>
+        <span class="cover-stat-label">Total Social Views</span>
+        <span class="cover-stat-change up">↑ Facebook & Instagram Combined</span>
       </div>
-      <div class="inc-item r d1">
-        <span class="inc-n">02</span>
-        <h3 class="inc-title">Content Shoot</h3>
-        <p class="inc-body">Professional shoot at Castle Gate — shop interior and exterior, product hero shots, packaging, ear-tag details, lifestyle content, and Tom to-camera pieces. Fully coordinated and delivered.</p>
-        <span class="inc-tag">Included as courtesy</span>
+      <div class="cover-stat">
+        <span class="cover-stat-value">940K+</span>
+        <span class="cover-stat-label">Ad Impressions</span>
+        <span class="cover-stat-change up">↑ Paid Campaign Total</span>
       </div>
-      <div class="inc-item r d2">
-        <span class="inc-n">03</span>
-        <h3 class="inc-title">Social Media Takeover</h3>
-        <p class="inc-body">Full account management from day one. Launch grid build, 3 pinned posts, 9 curated posts, then 3 posts per week plus daily Stories. End-to-end execution.</p>
-        <span class="inc-tag">Included</span>
+      <div class="cover-stat">
+        <span class="cover-stat-value">R60,299</span>
+        <span class="cover-stat-label">New Customer Revenue</span>
+        <span class="cover-stat-change up">↑ 31 New Accounts</span>
       </div>
-      <div class="inc-item r">
-        <span class="inc-n">04</span>
-        <h3 class="inc-title">Archive Asset Repurposing</h3>
-        <p class="inc-body">We receive, catalogue, and integrate the existing stud farm content stockpile. Good material should not sit on a hard drive — it fuels the launch grid and teaser phase.</p>
-        <span class="inc-tag">Included</span>
-      </div>
-      <div class="inc-item r d1">
-        <span class="inc-n">05</span>
-        <h3 class="inc-title">Website Coordination</h3>
-        <p class="inc-body">Light refresh and launch-readiness review included in the retainer. We coordinate the update and ensure the site matches the brand position on opening day. Major work scoped separately only if required.</p>
-        <span class="inc-tag">Light refresh included</span>
-      </div>
-      <div class="inc-item r d2">
-        <span class="inc-n">06</span>
-        <h3 class="inc-title">Klaviyo Email Setup</h3>
-        <p class="inc-body">Account setup, list structure, welcome flow, and launch announcement email. Simple, clean, and ready to capture everyone who walks through the door or visits the site.</p>
-        <span class="inc-tag">Included</span>
+      <div class="cover-stat">
+        <span class="cover-stat-value">+43%</span>
+        <span class="cover-stat-label">Avg. Order Value Growth</span>
+        <span class="cover-stat-change up">↑ R2,232 → R3,195</span>
       </div>
     </div>
   </div>
-</section>
 
-<!-- BUDGET -->
-<section class="section bud" id="budget">
-  <div class="si">
-    <p class="sl r">Budget Breakdown</p>
-    <h2 class="sh r d1">Full Cost<br><em>Overview.</em></h2>
-    <p class="sb r d2">A transparent breakdown of all costs for the first month. The retainer covers the agency deliverables. Additional items are optional or client-funded, clearly flagged throughout.</p>
-    <table class="bud-table r">
-      <thead>
-        <tr>
-          <th style="width:36%">Item</th>
-          <th style="width:22%">Cost</th>
-          <th>Notes</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="hi">
-          <td class="tn"><strong>Agency Retainer — Month One</strong></td>
-          <td class="tc">R12,500</td>
-          <td class="td">All-inclusive. Strategy, shoot, social management, content plan, website coordination, Klaviyo setup. Fixed. No surprises.</td>
-        </tr>
-        <tr>
-          <td class="tn">Paid Advertising — Meta &amp; Google</td>
-          <td class="tc">R8,000 – R15,000</td>
-          <td class="td"><strong>Recommended.</strong> Client-funded, billed directly to client ad accounts. Campaign management handled within the retainer. Meta first, Google Search introduced post-launch.</td>
-        </tr>
-        <tr>
-          <td class="tn">Website Labour — if major work required</td>
-          <td class="tc">R5,000 – R10,000</td>
-          <td class="td">Only if a significant redesign or new functionality is needed beyond a light refresh. Confirmed after handover review — no assumptions made upfront.</td>
-        </tr>
-        <tr>
-          <td class="tn">Website — external developer costs if rebuild needed</td>
-          <td class="tc">R12,000 – R28,000</td>
-          <td class="td">Light refresh: R12,000 – R18,000 total. Full rebuild: R22,000 – R28,000 total. Scoped and agreed before any work begins.</td>
-        </tr>
-        <tr>
-          <td class="tn">Klaviyo — email platform subscription</td>
-          <td class="tc">R1,000 – R2,000</td>
-          <td class="td">Client account. Low-cost monthly subscription. Setup and flows built within the retainer.</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="bud-callout r">
-      <div class="bud-callout-icon">&#x52;</div>
+  <!-- ═══════════════════════════════
+       HERO BAND — KEY STATS
+  ═══════════════════════════════ -->
+  <div class="hero-band" id="key-wins">
+    <div class="hero-stat">
+      <div class="hero-eyebrow">Most Important Metric — Retail Stores</div>
+      <div class="hero-value">+43%</div>
+      <div class="hero-label">Increase in Average Order Value</div>
+      <div class="hero-badge">↑ R2,232 → R3,195 per order</div>
+      <div class="hero-desc">
+        Customers are walking into retail stores already educated on the Wildwood range — arriving with greater intent and purchasing significantly more per visit. This is the clearest signal that brand investment is working exactly as intended.
+      </div>
+    </div>
+    <div class="hero-stat" style="padding: 0 0 0 48px; border-right: none;">
+      <div class="hero-eyebrow">New Customer Revenue</div>
+      <div class="hero-value">R60,299</div>
+      <div class="hero-label">From 31 New Customer Accounts</div>
+      <div class="hero-badge">R1,774 avg. first-purchase value</div>
+      <div class="hero-desc">
+        31 new customers generated R60,299 in tracked revenue, with an average first order of R1,774. These are high-intent buyers entering the brand — a quality pool of customers that ongoing marketing will convert into loyal repeat purchasers.
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 1 — SOCIAL VIEWS TOTAL
+  ═══════════════════════════════ -->
+  <div class="divider-band">
+    <div class="divider-band-title">Social Media Performance</div>
+    <div class="divider-band-meta">Jan 1 – May 31, 2026</div>
+  </div>
+
+  <div class="section" id="social-views">
+    <div class="section-header">
+      <span class="section-num">01</span>
       <div>
-        <h4>Conservative Month One Estimate</h4>
-        <p>Retainer + recommended ad spend: <strong>R20,500 – R27,500 all-in.</strong> This is a full-service agency month — strategy, production, social management, email, and paid media — for a budget most agencies reserve for strategy alone. We are invested in making BULL the launch that people remember.</p>
+        <div class="section-eyebrow">Combined Platforms</div>
+        <h2 class="section-title">Total Organic Views & Reach</h2>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- CONTENT STRATEGY -->
-<section class="section cnt" id="content">
-  <div class="si">
-    <p class="sl r">Content Strategy</p>
-    <h2 class="sh r d1">Five Pillars.<br><em>One Voice.</em></h2>
-    <p class="sb r d2">Creative direction is not a deliverable we produce at the end — it is the foundation every piece of content is built on. BULL speaks with earned authority: understated, factual, provenance-led. No hype. No filler words. The product earns the attention.</p>
-    <div class="tone-block r">
-      <h4>Brand Tone &mdash; The Brenaissance</h4>
-      <div class="tone-tags">
-        <span class="tone-tag">Understated</span>
-        <span class="tone-tag">Provenance-led</span>
-        <span class="tone-tag">Factual</span>
-        <span class="tone-tag">Confident</span>
-        <span class="tone-tag">No hype</span>
-        <span class="tone-tag">Earned authority</span>
-        <span class="tone-tag">Farm-rooted</span>
-        <span class="tone-tag">Premium without pretension</span>
-      </div>
-    </div>
-    <div class="pillars">
-      <div class="pr r">
-        <div class="pr-n">01</div>
-        <div>
-          <div class="pr-name">Founder Storytelling</div>
-          <div class="pr-desc">Tom is the brand. His background — the stud farm, the decision to build BULL, the refusal to compromise on quality — is the most powerful asset we have. We put him on camera and let the truth do the work. No scripted marketing speak. Real answers to direct questions.</div>
-        </div>
-        <div class="pr-hooks">
-          <strong>Hook Ideas</strong>
-          <ul>
-            <li>"I grew up on this farm. Here's why that matters."</li>
-            <li>"The ear-tag stays on until I'm satisfied with the cut."</li>
-            <li>"Why I built a butchery before I built a brand."</li>
-            <li>"What 20 years of farming taught me about beef."</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pr r">
-        <div class="pr-n">02</div>
-        <div>
-          <div class="pr-name">Product Truth &amp; Provenance</div>
-          <div class="pr-desc">Ear-tags, cuts, the curing process, what makes this beef different from supermarket shelf biltong. We show the process — from farm to packaging — without over-explaining. The footage makes the case.</div>
-        </div>
-        <div class="pr-hooks">
-          <strong>Hook Ideas</strong>
-          <ul>
-            <li>"Every piece has a number. Here's what it means."</li>
-            <li>"This is what grass-fed actually looks like."</li>
-            <li>"From ear-tag to packaging in under 60 seconds."</li>
-            <li>"Most biltong has six ingredients it can't name."</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pr r">
-        <div class="pr-n">03</div>
-        <div>
-          <div class="pr-name">Health &amp; Lifestyle Benefits</div>
-          <div class="pr-desc">32g protein per 100g. No artificial fillers. Grass-fed. High iron and zinc bioavailability. These are facts — we state them plainly and let the numbers do the persuading. Target: active adults, performance-conscious eaters, clean-label consumers.</div>
-        </div>
-        <div class="pr-hooks">
-          <strong>Hook Ideas</strong>
-          <ul>
-            <li>"32 grams of protein. One ingredient list."</li>
-            <li>"Your post-gym snack shouldn't need a chemistry degree."</li>
-            <li>"Clean label is not a trend. It's the baseline."</li>
-            <li>"High protein. No powder. No compromise."</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pr r">
-        <div class="pr-n">04</div>
-        <div>
-          <div class="pr-name">Scroll-Stop Hook Content</div>
-          <div class="pr-desc">Researched hooks built for the target audience — people who follow food quality, fitness, and provenance content. Fast, factual, designed to stop the scroll in the first two seconds. No trend-chasing. Hooks that hold up in six months.</div>
-        </div>
-        <div class="pr-hooks">
-          <strong>Hook Ideas</strong>
-          <ul>
-            <li>"We know this animal's birthday."</li>
-            <li>"South Africa's most traceable biltong. Now open."</li>
-            <li>"Watch it sliced. Know where it came from."</li>
-            <li>"Not all biltong is equal. Here's the proof."</li>
-          </ul>
-        </div>
-      </div>
-      <div class="pr r">
-        <div class="pr-n">05</div>
-        <div>
-          <div class="pr-name">Offers &amp; Promotions</div>
-          <div class="pr-desc">Launch-week pricing, loyalty signals, and opening day offers. Communicated plainly — no artificial urgency, no inflated RRP. The offer is real, the deadline is real, and the product justifies itself beyond the discount.</div>
-        </div>
-        <div class="pr-hooks">
-          <strong>Hook Ideas</strong>
-          <ul>
-            <li>"Opening week. Launch price. First come."</li>
-            <li>"One week only — then the price is the price."</li>
-            <li>"Come in. Taste it. Decide."</li>
-            <li>"We don't run promotions. Except this once."</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOCIAL -->
-<section class="section soc">
-  <div class="si">
-    <p class="sl r">Social Media Plan</p>
-    <h2 class="sh r d1">Launch Grid<br><em>Structure.</em></h2>
-    <p class="sb r d2">The Instagram grid is the first impression. Three pinned posts anchor the brand, nine curated posts below establish depth, then the ongoing cadence takes over. Everything supported by the stud farm archive and the Castle Gate shoot.</p>
-    <div class="launch-grid r">
-      <div class="gc pin"><div class="gc-tag">Pin 01</div><div class="gc-text"><strong>Core Brand Story</strong>BULL, the farm, the why. Tom direct to camera.</div></div>
-      <div class="gc pin"><div class="gc-tag">Pin 02</div><div class="gc-text"><strong>Ear-Tag Proof</strong>The traceability story in 60 seconds. Visual, factual, ownable.</div></div>
-      <div class="gc pin"><div class="gc-tag">Pin 03</div><div class="gc-text"><strong>Tom's Message</strong>Founder direct address. What BULL stands for.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Farm Footage</strong>Stud farm archive — cattle, land, process.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Product Hero</strong>Sliced biltong, packaging, textures close-up.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Health Fact</strong>Protein stat, clean label, single-source beef.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Castle Gate</strong>Shop exterior and interior. Place as brand.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Process Film</strong>Curing, slicing, packaging sequence.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Quote / Hook</strong>Single-line provenance statement. Typographic.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Behind the Cut</strong>Tom at work. Craft, not performance.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Launch Tease</strong>Opening date reveal. Minimal, high-impact.</div></div>
-      <div class="gc"><div class="gc-tag">Grid</div><div class="gc-text"><strong>Lifestyle</strong>Product in context. Table, kitchen, outdoors.</div></div>
-    </div>
-    <div class="cad-row r">
-      <div class="cad-card"><label>Ongoing cadence</label><p>3 posts per week + daily Stories. Quality-first. We do not post for the sake of posting.</p></div>
-      <div class="cad-card"><label>Stories strategy</label><p>Daily — behind the scenes, product of the day, farm archive, customer content amplification.</p></div>
-      <div class="cad-card"><label>Platforms — phase one</label><p>Instagram primary. Facebook mirrored. TikTok assessed at Week 5 review based on audience data.</p></div>
-      <div class="cad-card"><label>Target audience</label><p>Active adults 25–45, Joburg and surrounds. Food-quality-conscious, high earning, low tolerance for mediocre products.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- TIMELINE -->
-<section class="section tl" id="timeline">
-  <div class="si">
-    <p class="sl r">5-Week Timeline</p>
-    <h2 class="sh r d1">Week by Week.<br><em>No Gaps.</em></h2>
-    <p class="sb r d2">From handover to grand opening in four weeks, with the fifth beginning the sustained rollout. Every task is sequenced deliberately — nothing waits on something that should have been done already.</p>
-    <div class="weeks r">
-      <div class="wk">
-        <div class="wk-n">01</div>
-        <div class="wk-c">
-          <div class="wk-title">Foundations &amp; Handover</div>
-          <ul class="wk-tasks">
-            <li>Receive stud farm content archive — catalogue and assess usable material</li>
-            <li>Social account and website handovers confirmed</li>
-            <li>Website review — confirm light refresh suffices or flag if additional work is needed</li>
-            <li>Finalise shoot brief, locations, and logistics for Week 2</li>
-            <li>Teaser content goes live using existing archive assets</li>
-            <li>Klaviyo account created and list structure configured</li>
-          </ul>
-        </div>
-      </div>
-      <div class="wk">
-        <div class="wk-n">02</div>
-        <div class="wk-c">
-          <div class="wk-title">Shoot &amp; Production</div>
-          <ul class="wk-tasks">
-            <li>Execute content shoot at Castle Gate — shop, products, Tom interviews, lifestyle</li>
-            <li>Edit and organise all assets: archive footage and new shoot material combined</li>
-            <li>Begin website light refresh work</li>
-            <li>Build the full 12-post launch grid (3 pinned + 9 curated)</li>
-            <li>Draft captions, hooks, and Stories scripts for approval</li>
-          </ul>
-        </div>
-      </div>
-      <div class="wk">
-        <div class="wk-n">03</div>
-        <div class="wk-c">
-          <div class="wk-title">Finalise &amp; Soft Launch</div>
-          <ul class="wk-tasks">
-            <li>Finalise all launch content and ad creatives</li>
-            <li>Website refresh complete and live</li>
-            <li>Soft launch — social grid goes live across all platforms</li>
-            <li>Klaviyo welcome flow activated — captures from website and social bio</li>
-            <li>Ad creatives submitted for review and approval</li>
-          </ul>
-        </div>
-      </div>
-      <div class="wk go">
-        <div class="wk-n">04</div>
-        <div class="wk-c">
-          <div class="wk-title">Grand Opening — Castle Gate</div>
-          <ul class="wk-tasks">
-            <li>Grand opening event at Castle Gate — live coverage via Stories and Reels</li>
-            <li>Paid Meta ads go live — launch offer and brand awareness campaigns simultaneously</li>
-            <li>Full content cadence begins: 3 posts per week + daily Stories</li>
-            <li>Klaviyo launch announcement email sent to full list</li>
-            <li>Opening-week offer communicated across all channels</li>
-          </ul>
-        </div>
-      </div>
-      <div class="wk">
-        <div class="wk-n">05+</div>
-        <div class="wk-c">
-          <div class="wk-title">Optimise &amp; Sustain</div>
-          <ul class="wk-tasks">
-            <li>Week 4 performance review — reach, engagement, email metrics, in-store uplift</li>
-            <li>Ad spend reviewed against benchmarks — scale or adjust per channel</li>
-            <li>Ongoing 3-posts-per-week cadence maintained</li>
-            <li>Customer content and UGC identified and amplified</li>
-            <li>Month two scope and retainer discussed based on results</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EMAIL -->
-<section class="section em">
-  <div class="si">
-    <p class="sl r">Email — Klaviyo</p>
-    <h2 class="sh r d1">Simple Setup.<br><em>Day One Ready.</em></h2>
-    <div class="em-two">
+    <div class="total-views-banner">
       <div>
-        <p class="sb r">We use Klaviyo. Purpose-built for product brands, it integrates with most e-commerce platforms and keeps lists clean and segmented from the start. Setup and flows are built within the retainer — the client holds the account.</p>
-        <p class="sb r d1" style="margin-top:0.9rem">For launch we keep it focused. Two flows. One announcement. No bloated automation that nobody reads.</p>
-        <div class="em-flows">
-          <div class="em-flow r">
-            <div class="fl-icon">Flow 01</div>
-            <div><div class="fl-name">Welcome Flow</div><div class="fl-desc">Triggered immediately on signup. Brand story, what to expect, soft intro to the product. Two emails spaced three days apart. Goes live Week 3.</div></div>
+        <div class="tvb-label">Combined Facebook + Instagram Views</div>
+        <div class="tvb-value">1,176,900</div>
+        <div class="tvb-context">
+          Over 1.17 million views generated organically across Facebook and Instagram in the 6-month period — a substantial audience exposure with zero paid content spend on video views.
+        </div>
+      </div>
+      <div class="tvb-breakdown">
+        <div class="tvb-item">
+          <div class="tvb-item-label">Facebook Views</div>
+          <div class="tvb-item-value">801,000</div>
+          <span class="up" style="font-size:11px;font-weight:700;">↑ 445.5%</span>
+        </div>
+        <div class="tvb-item">
+          <div class="tvb-item-label">Instagram Views</div>
+          <div class="tvb-item-value">375,900</div>
+          <span class="down" style="font-size:11px;font-weight:700;">↓ 17.4%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card accent">
+        <div class="kpi-label">Facebook Viewers (Unique)</div>
+        <div class="kpi-value">401.4K</div>
+        <span class="kpi-change up">↑ 466.9%</span>
+        <div class="kpi-context">Unique audience who saw Wildwood content on Facebook</div>
+      </div>
+      <div class="kpi-card gold">
+        <div class="kpi-label">Instagram Reach (Unique)</div>
+        <div class="kpi-value">171K</div>
+        <span class="kpi-change up">↑ 54.2%</span>
+        <div class="kpi-context">Unique accounts reached — strong growth despite fewer overall views</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kpi-label">Total Paid Ad Impressions</div>
+        <div class="kpi-value">940,591</div>
+        <span class="kpi-change up" style="color:var(--lime);">Confirmed Total</span>
+        <div class="kpi-context">Paid impressions served across Meta ad campaigns</div>
+      </div>
+      <div class="kpi-card ember">
+        <div class="kpi-label">Combined Organic + Paid Exposure</div>
+        <div class="kpi-value">2.1M+</div>
+        <span class="kpi-change up">↑ Est. total touchpoints</span>
+        <div class="kpi-context">Organic views + paid impressions combined — significant brand reach</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 2 — FACEBOOK
+  ═══════════════════════════════ -->
+  <div class="section" id="facebook">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <div>
+        <div class="section-eyebrow">Platform Deep Dive</div>
+        <h2 class="section-title">Facebook Performance</h2>
+      </div>
+    </div>
+
+    <div class="platform-grid">
+      <div class="platform-card facebook">
+        <div class="platform-card-header" style="background:#e8f0ff;">
+          <div class="platform-icon">f</div>
+          <div>
+            <div class="platform-name">Facebook</div>
+            <div class="platform-period">Jan 1 – May 31, 2026</div>
           </div>
-          <div class="em-flow r d1">
-            <div class="fl-icon">Flow 02</div>
-            <div><div class="fl-name">Launch Announcement</div><div class="fl-desc">One broadcast email to the full list on opening day. Opening details, launch offer, direct CTA to visit Castle Gate. Sent Week 4.</div></div>
+        </div>
+        <div class="platform-metrics">
+          <div>
+            <div class="platform-metric-label">Views</div>
+            <div class="platform-metric-value">801K</div>
+            <span class="platform-metric-change up">↑ 445.5%</span>
           </div>
-          <div class="em-flow r d2">
-            <div class="fl-icon">Post</div>
-            <div><div class="fl-name">Post-Launch Cadence</div><div class="fl-desc">Monthly rhythm assessed at Week 5 review. Only send when there is something worth saying — new product, restock, behind-the-scenes update.</div></div>
+          <div>
+            <div class="platform-metric-label">Unique Viewers</div>
+            <div class="platform-metric-value">401.4K</div>
+            <span class="platform-metric-change up">↑ 466.9%</span>
           </div>
         </div>
       </div>
-      <div class="r d1">
-        <div class="em-box">
-          <label>Klaviyo Cost</label>
-          <div class="em-price">R1,000 – R2,000 /mo</div>
-          <p style="font-size:0.8rem;color:var(--mist);line-height:1.7">Client account. Scales with list size — this estimate covers launch phase up to ~1,000 subscribers.</p>
-          <ul class="em-list">
-            <li>Account and list setup</li>
-            <li>Welcome flow — 2 emails</li>
-            <li>Launch announcement email</li>
-            <li>Signup form for website and social bio link</li>
-            <li>Basic audience segmentation</li>
-          </ul>
+
+      <div class="kpi-card" style="display:flex;flex-direction:column;justify-content:center;gap:12px;padding:28px;">
+        <div class="kpi-label">What this means</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;">
+          Facebook's explosive 445% growth in views is the standout story of the period. The doubling of unique viewers to 401,400 people — up 467% — shows Wildwood's content is reaching an increasingly wide and diverse audience on the platform. This level of growth is not accidental; it reflects a content strategy that is resonating strongly with Facebook's algorithm and the target demographic.
+        </p>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <h3>Facebook's Role in Building Retail Demand</h3>
+      <p>
+        The scale of Facebook's view growth correlates directly with what we're seeing in retail store metrics — a 43% increase in average basket size. As Wildwood content reached over 400,000 unique people on Facebook during this period, those viewers are more likely to recognise and trust the brand at point of sale. The awareness campaign investment is converting into in-store revenue.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 3 — INSTAGRAM
+  ═══════════════════════════════ -->
+  <div class="divider-band">
+    <div class="divider-band-title">Instagram Performance</div>
+    <div class="divider-band-meta">Jan 1 – May 31, 2026</div>
+  </div>
+
+  <div class="section" id="instagram">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <div>
+        <div class="section-eyebrow">Platform Deep Dive</div>
+        <h2 class="section-title">Instagram Performance</h2>
+      </div>
+    </div>
+
+    <div class="platform-grid">
+      <div class="platform-card instagram">
+        <div class="platform-card-header" style="background:#fdf0f8;">
+          <div class="platform-icon">IG</div>
+          <div>
+            <div class="platform-name">Instagram</div>
+            <div class="platform-period">Jan 1 – May 31, 2026</div>
+          </div>
+        </div>
+        <div class="platform-metrics">
+          <div>
+            <div class="platform-metric-label">Views</div>
+            <div class="platform-metric-value">375.9K</div>
+            <span class="platform-metric-change down">↓ 17.4%</span>
+          </div>
+          <div>
+            <div class="platform-metric-label">Reach (Unique)</div>
+            <div class="platform-metric-value">171K</div>
+            <span class="platform-metric-change up">↑ 54.2%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="kpi-card" style="display:flex;flex-direction:column;justify-content:center;gap:12px;padding:28px;">
+        <div class="kpi-label">Reading the split</div>
+        <p style="font-size:13px;color:var(--muted);line-height:1.65;">
+          While total views dipped 17.4%, Instagram's reach jumped 54.2% — meaning fewer repeat views, but content reaching significantly more unique people. This is a healthier growth signal than the inverse: Wildwood is expanding its audience rather than repeatedly showing content to the same people.
+        </p>
+      </div>
+    </div>
+
+    <div class="insights-grid">
+      <div class="insight-card">
+        <span class="insight-tag positive">Positive Signal</span>
+        <div class="insight-title">Reach Growth Outpaces View Drop</div>
+        <div class="insight-body">171K unique accounts reached — up 54.2% — means Wildwood is being discovered by new audiences consistently, which is the primary goal of the current growth phase.</div>
+      </div>
+      <div class="insight-card">
+        <span class="insight-tag neutral">Context</span>
+        <div class="insight-title">View Decline Reflects Algorithm Shift</div>
+        <div class="insight-body">Instagram's algorithm has de-prioritised repeat-view content in 2026. A drop in views with a rise in reach is a common and expected pattern — the content is spreading wider, just not as deep per viewer.</div>
+      </div>
+      <div class="insight-card">
+        <span class="insight-tag positive">Opportunity</span>
+        <div class="insight-title">Reel Format to Drive Views Recovery</div>
+        <div class="insight-body">Reels consistently outperform static and carousel content for raw view counts on Instagram. Increasing Reel frequency is the primary lever to recover views while maintaining reach growth.</div>
+      </div>
+      <div class="insight-card">
+        <span class="insight-tag watch">Watch</span>
+        <div class="insight-title">Content Frequency Consistency</div>
+        <div class="insight-body">The spike-heavy patterns visible in the chart suggest content is posted in bursts. A more consistent posting cadence will stabilise monthly reach and build compounding growth.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 4 — ADS
+  ═══════════════════════════════ -->
+  <div class="divider-band">
+    <div class="divider-band-title">Paid Advertising</div>
+    <div class="divider-band-meta">Meta Campaign Performance</div>
+  </div>
+
+  <div class="section" id="ads">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <div>
+        <div class="section-eyebrow">Meta Ads</div>
+        <h2 class="section-title">Paid Impressions & Campaign Impact</h2>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card accent">
+        <div class="kpi-label">Total Ad Impressions</div>
+        <div class="kpi-value">940,591</div>
+        <span class="kpi-change up">↑ Confirmed Period Total</span>
+        <div class="kpi-context">Nearly 1 million paid impressions served across Meta campaigns</div>
+      </div>
+      <div class="kpi-card gold">
+        <div class="kpi-label">Combined Organic Views</div>
+        <div class="kpi-value">1.17M</div>
+        <span class="kpi-change up">↑ Facebook + Instagram</span>
+        <div class="kpi-context">Organic content generated more views than paid — exceptional content efficiency</div>
+      </div>
+      <div class="kpi-card dark">
+        <div class="kpi-label">Total Estimated Touchpoints</div>
+        <div class="kpi-value">2.1M+</div>
+        <span class="kpi-change up" style="color:var(--lime);">Organic + Paid Combined</span>
+        <div class="kpi-context">Brand presence across all tracked channels in the 6-month window</div>
+      </div>
+      <div class="kpi-card ember">
+        <div class="kpi-label">Awareness Campaign ROAS</div>
+        <div class="kpi-value">12.65×</div>
+        <span class="kpi-change up">↑ Shopping Campaign Tracked</span>
+        <div class="kpi-context">From prior period shopping test — R2,299 spend generated R29,087 purchase value</div>
+      </div>
+    </div>
+
+    <div class="highlight-card">
+      <h3>Why 940,000 Impressions Matters</h3>
+      <p>
+        Impressions represent how many times Wildwood's paid content was shown to a potential customer. At 940,591 confirmed paid impressions, combined with 1.17 million organic views, Wildwood achieved a total of over 2 million content exposures in the period — on a budget that would not support anywhere near this level of reach via traditional advertising channels. This is the compounding power of a well-managed digital strategy: paid campaigns boost the organic flywheel, and organic content reduces the cost of paid reach.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 5 — REVENUE & CUSTOMERS
+  ═══════════════════════════════ -->
+  <div class="divider-band">
+    <div class="divider-band-title">Revenue & Customer Growth</div>
+    <div class="divider-band-meta">Retail & Direct Sales</div>
+  </div>
+
+  <div class="section" id="revenue">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <div>
+        <div class="section-eyebrow">Sales Performance</div>
+        <h2 class="section-title">New Customer Revenue & Order Value</h2>
+      </div>
+    </div>
+
+    <!-- Hero stat duo -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
+      <div class="kpi-card accent" style="padding:36px 32px;">
+        <div class="kpi-label">New Customer Revenue</div>
+        <div class="kpi-value" style="font-size:48px;">R60,299</div>
+        <span class="kpi-change up" style="font-size:14px;">31 New Customers · 34 Orders</span>
+        <div class="kpi-context" style="margin-top:12px;font-size:13px;">
+          High-intent buyers entering the brand for the first time, with an average first-order value of R1,774 — well above typical first-purchase benchmarks.
+        </div>
+      </div>
+      <div class="kpi-card gold" style="padding:36px 32px;">
+        <div class="kpi-label">Average Order Value — Retail Stores</div>
+        <div class="kpi-value" style="font-size:48px;">+43%</div>
+        <span class="kpi-change up" style="font-size:14px;">R2,232 → R3,195 per transaction</span>
+        <div class="kpi-context" style="margin-top:12px;font-size:13px;">
+          Basket sizes at existing retail stockists grew 43% year-on-year — the most direct financial evidence that awareness campaigns are influencing in-store purchasing behaviour.
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ADS -->
-<section class="section ads">
-  <div class="si">
-    <p class="sl r">Paid Advertising</p>
-    <h2 class="sh r d1">Recommended.<br><em>Not Required.</em></h2>
-    <p class="sb r d2">Paid ads are not included in the retainer — but we strongly recommend allocating budget from Week 4. Organic launch builds the foundation; paid ads accelerate reach during the opening window when momentum matters most. All campaign management is handled within the retainer fee.</p>
-    <div class="ads-grid r">
-      <div class="ads-card">
-        <h4>Meta Ads — Phase One</h4>
-        <div class="ads-sub">Facebook &amp; Instagram &middot; Weeks 4–6</div>
-        <p>Brand awareness and launch offer campaigns. Geo-targeted to Johannesburg and surrounds. We start conservatively, read the data, and scale what works. Retargeting audiences built from Week 3 organic activity for maximum efficiency on opening day.</p>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Orders per New Customer</div>
+        <div class="kpi-value">1.1</div>
+        <span class="kpi-change up">↑ 34 orders / 31 customers</span>
+        <div class="kpi-context">Some new customers already placed a second order in the period</div>
       </div>
-      <div class="ads-card">
-        <h4>Google Search — Phase Two</h4>
-        <div class="ads-sub">Assessed post-launch &middot; Week 5+</div>
-        <p>Introduced once Meta data gives us intent signals. Search campaigns capture people actively looking for premium biltong in Johannesburg. Low volume, high intent — cost-efficient once the brand has name recognition from the social launch.</p>
+      <div class="kpi-card dark">
+        <div class="kpi-label">Avg. First Purchase</div>
+        <div class="kpi-value">R1,774</div>
+        <span class="kpi-change up" style="color:var(--lime);">High-intent entry point</span>
+        <div class="kpi-context">Strong first-order value signals customers are buying in quantity, not trialling</div>
+      </div>
+      <div class="kpi-card ember">
+        <div class="kpi-label">AOV Increase (Rand)</div>
+        <div class="kpi-value">+R963</div>
+        <span class="kpi-change up">↑ Per transaction uplift</span>
+        <div class="kpi-context">Each retail transaction is worth nearly R1,000 more than 12 months ago</div>
       </div>
     </div>
-    <div class="ads-spend r">
+
+    <div class="highlight-card">
+      <h3>The Connection Between Awareness and Retail Basket Size</h3>
+      <p>
+        The 43% jump in average order value at retail stores is not coincidental — it maps directly to the period of sustained awareness campaign investment. When consumers see a brand repeatedly across social media before visiting a stockist, they arrive at the shelf already decided. They buy more because they already trust the product. This "pre-sold customer" effect is one of the hardest marketing outcomes to attribute, but the numbers make the case clearly: Wildwood customers are buying at nearly R3,200 per transaction versus R2,200 a year ago. That R963-per-transaction uplift, multiplied across every retail sale, represents a significant and growing revenue impact that will compound as brand awareness continues to build.
+      </p>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       SECTION 6 — COMMENTARY
+  ═══════════════════════════════ -->
+  <div class="divider-band">
+    <div class="divider-band-title">Strategy & Commentary</div>
+    <div class="divider-band-meta">Insights · What the Numbers Mean</div>
+  </div>
+
+  <div class="section" id="commentary">
+    <div class="section-header">
+      <span class="section-num">06</span>
       <div>
-        <label>Recommended Month One Ad Spend</label>
-        <div class="ads-spend-val">R8,000 – R15,000</div>
-        <div class="ads-spend-note">Client-funded &middot; billed directly to client ad accounts &middot; managed within retainer</div>
+        <div class="section-eyebrow">Fetchwave Commentary</div>
+        <h2 class="section-title">What the Data Is Telling Us</h2>
       </div>
-      <div style="max-width:30rem">
-        <label>Our Approach</label>
-        <p style="font-size:0.82rem;color:var(--mist);line-height:1.75">Start at the lower end. Review performance at the two-week mark. Scale channels that are delivering. We do not spend on awareness before the organic content base is in place — which is why ads go live in Week 4, not Week 1.</p>
+    </div>
+
+    <div class="commentary-grid">
+      <div class="commentary-block">
+        <h4>Facebook Is the Growth Engine Right Now</h4>
+        <p>A 445% increase in Facebook views and 467% in unique viewers is exceptional. Facebook is the platform where Wildwood content is compounding — each post reaching a wider audience than the last. The algorithm is rewarding the content, which means consistency here should be the top priority for the next phase.</p>
+      </div>
+
+      <div class="commentary-block">
+        <h4>Instagram Reach Growth Is the Right Signal</h4>
+        <p>Don't be misled by the 17.4% view dip on Instagram. Reach grew 54.2% — meaning Wildwood found 54% more new people than the same period prior. This is the healthier metric at this stage of brand growth. The objective is audience expansion, not repeat views from the same followers.</p>
+      </div>
+
+      <div class="commentary-block">
+        <h4>2.1 Million Brand Touchpoints on a Lean Budget</h4>
+        <p>Combining organic views and paid impressions, Wildwood achieved over 2.1 million content touchpoints in 6 months. For a growing independent brand, this level of exposure — achieved through a blend of strong organic content and targeted paid amplification — would cost multiples more through traditional advertising channels.</p>
+      </div>
+
+      <div class="commentary-block">
+        <h4>New Customers Are Buying Big</h4>
+        <p>A R1,774 average first purchase is a strong indicator of product confidence. These aren't trial buyers picking up a single unit — they're committing significant spend from the first interaction. This is the profile of a customer who is likely to return, and who arrived at the brand well-informed by prior social exposure.</p>
+      </div>
+
+      <div class="commentary-block">
+        <h4>The Retail AOV Story Should Be the Lead</h4>
+        <p>The 43% increase in average order value at retail stores is arguably the single most commercially significant data point in this report. It directly links brand awareness investment to in-store revenue growth. Every stakeholder — from retailers to investors — should understand this number and what it represents.</p>
+      </div>
+
+      <div class="commentary-block">
+        <h4>The Flywheel Is Starting to Turn</h4>
+        <p>The combination of massive organic reach growth, healthy paid impression volume, growing new customer acquisition, and rising in-store basket sizes all point to the same thing: Wildwood's brand investment is beginning to compound. The next 6 months, with continued consistency, should accelerate all of these metrics significantly.</p>
       </div>
     </div>
   </div>
-</section>
 
-<!-- WEBSITE -->
-<section class="section web">
-  <div class="si">
-    <p class="sl r">Website</p>
-    <h2 class="sh r d1">Refresh First.<br><em>Rebuild Only if Needed.</em></h2>
-    <p class="sb r d2">We review the current website immediately after account handover. Our default is a light refresh to get it launch-ready — this coordination is included in the retainer. If the site needs significant structural work, we scope it transparently and agree before anything starts.</p>
-    <div class="web-opts r">
-      <div class="web-opt pri">
-        <span class="web-opt-tag">Default — included in retainer</span>
-        <h4>Light Refresh</h4>
-        <div class="web-price">Agency coordination included &middot; External costs R12,000 – R18,000 if required</div>
-        <p>Update to match brand position. Improve product pages, imagery swap, copy alignment, speed check, mobile optimisation. Enough to go live with confidence on opening day without a long rebuild process.</p>
-      </div>
-      <div class="web-opt">
-        <span class="web-opt-tag">Only if required — agreed after handover</span>
-        <h4>Full Rebuild</h4>
-        <div class="web-price">Agency labour R5,000 – R10,000 + external R22,000 – R28,000</div>
-        <p>Major redesign, new shop functionality, traceability integration, or significant structural work. Scoped separately after the handover review. We do not assume this is needed — and we do not charge for it unless it is.</p>
-      </div>
+  <!-- FOOTER -->
+  <div class="report-footer">
+    <div>
+      <div class="footer-brand">Wildwood</div>
+      <div style="font-size:11px;color:var(--moss);margin-top:4px;">Healthy Energy Alternative · South Africa</div>
+    </div>
+    <div class="footer-meta">
+      Prepared by Fetchwave<br>
+      Report Period: January 1 – May 31, 2026<br>
+      Confidential — For Client Use Only
     </div>
   </div>
-</section>
 
-
-<!-- CLOSE -->
-<div class="cls">
-  <div class="cls-glow"></div>
-  <p class="sl r" style="justify-content:center;margin-bottom:2rem">Next Steps</p>
-  <h2 class="cls-title r d1">Let's Build<br>Something <em>Lasting.</em></h2>
-  <p class="cls-body r d2">BULL does not need gimmicks. It needs a team that understands provenance, respects the product, and knows how to put the right story in front of the right people. That is what this plan does. Fetchwave is ready to start Week 1 on your signal.</p>
-  <div class="cls-meta r d3">
-    <div><label>Retainer — Month One</label><p>R12,500 &middot; All-inclusive</p></div>
-    <div><label>Conservative Total</label><p>R20,500 – R27,500</p></div>
-    <div><label>Launch Target</label><p>Week 4 &middot; Castle Gate Opening</p></div>
-    <div><label>Email Platform</label><p>Klaviyo &middot; Setup Included</p></div>
-  </div>
-</div>
-
-<footer style="background:var(--ink);border-top:1px solid rgba(200,168,75,0.1);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
-  <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-lo)">Fetchwave &middot; BULL Biltong &middot; Confidential</div>
-  <div style="font-family:var(--mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(160,152,136,0.25)">&copy; 2024 &middot; Fetchwave</div>
-</footer>
+</div><!-- /main -->
 
 <script>
-const bar=document.getElementById('progress');
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  bar.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%';
-});
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}});
-},{threshold:0.1});
-document.querySelectorAll('.r').forEach(el=>obs.observe(el));
+  function openMenu() {
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('overlay').classList.add('visible');
+  }
+
+  function closeMenu() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('overlay').classList.remove('visible');
+  }
+
+  function scrollTo(id) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    closeMenu();
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  // Scroll spy
+  const sections = ['cover','key-wins','social-views','facebook','instagram','ads','revenue','commentary'];
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      if (window.scrollY >= el.offsetTop - 120) current = i;
+    });
+    navLinks.forEach((l, i) => {
+      l.classList.toggle('active', i === current);
+    });
+  });
 </script>
 </body>
 </html>
